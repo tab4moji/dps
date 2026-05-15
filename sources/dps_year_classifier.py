@@ -21,7 +21,7 @@ def extract_year(file_path: Path) -> int:
     Updates: 1
     Created: 2026-05-15T16:18:57+09:00 (e59d103a)
     Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Ref Count: 5
+    Ref Count: 3
     Actual Use: TRUE
     """
     """パストークンから年度を抽出して返す。見つからなければ mtime の年を返す。"""
@@ -42,7 +42,7 @@ def year_weight(year: int, config: dict | None = None) -> float:
     Updates: 1
     Created: 2026-05-15T16:18:57+09:00 (e59d103a)
     Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Ref Count: 5
+    Ref Count: 3
     Actual Use: TRUE
     """
     """年代スロット重み A(y) を返す。"""
