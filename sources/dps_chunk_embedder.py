@@ -18,6 +18,15 @@ CACHE_FILE = Path("dps_embed_cache.jsonl")
 
 
 def _cache_key(file_path: Path) -> str:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 2
+    Actual Use: TRUE
+    """
     """ファイルパスと mtime の sha256 をキャッシュキーとして返す。"""
     mtime = file_path.stat().st_mtime
     raw = f"{file_path}:{mtime}"
@@ -25,6 +34,15 @@ def _cache_key(file_path: Path) -> str:
 
 
 def _load_cache() -> dict:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: FALSE
+    """
     """キャッシュファイルを読み込んで辞書を返す。"""
     cache: dict = {}
     if not CACHE_FILE.exists():
@@ -37,6 +55,15 @@ def _load_cache() -> dict:
 
 
 def _save_cache(key: str, chunks: list) -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: FALSE
+    """
     """チャンクリストをキャッシュファイルに追記する。"""
     with CACHE_FILE.open("a", encoding="utf-8") as fh:
         fh.write(json.dumps({"key": key, "chunks": chunks}, ensure_ascii=False) + "\n")
@@ -45,6 +72,15 @@ def _save_cache(key: str, chunks: list) -> None:
 def _split_chunks(
     text: str, chunk_size: int, overlap: int, min_len: int
 ) -> List[str]:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 3
+    Actual Use: TRUE
+    """
     """テキストを固定幅スライドウィンドウで分割したリストを返す。"""
     if len(text) < min_len:
         return [text]
@@ -60,6 +96,15 @@ def _split_chunks(
 
 
 def _embed_text(text: str, ollama_url: str, model: str) -> List[float]:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: FALSE
+    """
     """Ollama embed API を呼び出して embedding ベクトルを返す。"""
     payload = json.dumps({"model": model, "input": text}).encode()
     req = urllib.request.Request(
@@ -78,6 +123,15 @@ def embed_file_chunks(
     text: str,
     config: dict | None = None,
 ) -> List[Tuple[str, List[float]]]:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 1
+    Actual Use: FALSE
+    """
     """チャンク分割+Embedding 結果を [(text, vec), ...] で返す。キャッシュ利用。"""
     cfg = config if config is not None else load_config()
     key = _cache_key(file_path)

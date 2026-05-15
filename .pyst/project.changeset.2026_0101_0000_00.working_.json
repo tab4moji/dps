@@ -1,0 +1,5366 @@
+{
+  "commit": {
+    "hash": "working_",
+    "parent": "e59d103a1397a518cb6520af971d8eeb1f041ed5",
+    "timestamp": "2026-01-01T00:00:00",
+    "message": "Working Tree (Uncommitted changes)"
+  },
+  "entities": {
+    ".pyst/tmp/temp.py::test_extract_year_from_path": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "e65d84eeb1581a07064dc676b61e50f8e41e2543eaa83ed97f2a312d7c973070",
+      "raw_hash": "75ff992931109bcf6bc0da95d69d40f802ce879ff8e0628df00301d6cb6e5d1e",
+      "calls": [
+        "mkdir",
+        "write_text",
+        "extract_year"
+      ],
+      "docstring": "パスに含まれる年度を正しく抽出できること。",
+      "meta": {
+        "lineno": 12,
+        "end_lineno": 12,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    ".pyst/tmp/temp.py::test_extract_year_from_path.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "28b1a6d0e5050b1d8bd655f91a28b6c7fc01bebd5c106e6a0f4f279dac9d8901",
+      "raw_hash": "03348559f0f6c550d0097feb4afee39405cb085b8a3437b0654730add06e577c",
+      "meta": {
+        "lineno": 13,
+        "end_lineno": 13,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    ".pyst/tmp/temp.py::test_extract_year_fallback_to_mtime": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "51d89dbe8f9844686d18603b4c375404d76ff5c7f72a63e0672ed704b22354cb",
+      "raw_hash": "f699ea4cf41b1a07327b778b6656bc8aacf4bdbe6bba246468ca8aeccb3c2be3",
+      "calls": [
+        "write_text",
+        "extract_year",
+        "now"
+      ],
+      "docstring": "年度がパスにない場合は mtime の年を返すこと。",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    ".pyst/tmp/temp.py::test_extract_year_fallback_to_mtime.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c1e1062f7abef51062aee84c3e63bb14d85558ea62b22d7e47af33a86379bc0f",
+      "raw_hash": "453efe355d7fee01bd55062e2ad9ac023f501a89083443f02925cc7a5f562743",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 22,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    ".pyst/tmp/temp.py::test_extract_year_fallback_to_mtime.year": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "55c6215f035766f315498b544a4293446b1415c8dbe6c0423df757ed46650257",
+      "raw_hash": "eb093b540353e1e083c14eb72613bff760eaa0f166deec73afff2ed201869c21",
+      "meta": {
+        "lineno": 24,
+        "end_lineno": 24,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    ".pyst/tmp/temp.py::test_year_weight_current": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "6d9e77c1105ab76546ff48ba36af4877e674c886d8dfb41ee857f26039cb3e99",
+      "raw_hash": "4e89f686efa432e3bd6345795a0da32dda67f5f1412a07f3c3f155696cef4295",
+      "calls": [
+        "gmtime",
+        "year_weight"
+      ],
+      "docstring": "当年は重み 1.0 を返すこと。",
+      "meta": {
+        "lineno": 29,
+        "end_lineno": 29,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    ".pyst/tmp/temp.py::test_year_weight_current.current": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "4e196ccc778e7d3b385b324706513eb1a37916ca3fd197c5d2a6d67b079f8e60",
+      "raw_hash": "56c7dff32d707e8b1ecd8c27b3154f24f5f07631193200de34cd76644bf319f2",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    ".pyst/tmp/temp.py::test_year_weight_old": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "ce72d08268ace65d218ba85b31317039a134712e2bd80f176078cc1c70538a38",
+      "raw_hash": "ad3053001a567a26f4e2033337e2d07852666278b15f38760e0f623b9850793c",
+      "calls": [
+        "gmtime",
+        "year_weight"
+      ],
+      "docstring": "3年以上前はデフォルト重み 0.4 を返すこと。",
+      "meta": {
+        "lineno": 36,
+        "end_lineno": 36,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    ".pyst/tmp/temp.py::test_year_weight_old.old_year": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "fdf4d27adacba9d392abfda98006f341b5e87db459faaba767a4618636a33351",
+      "raw_hash": "dc0ff7ef6a6bcfbe4ee31bd9217cb5a98708ffb7385ea2252922259680176992",
+      "meta": {
+        "lineno": 38,
+        "end_lineno": 38,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "sources/dps_aggregator.py::POSITION_WEIGHT": {
+      "type": "variable",
+      "scope": "global",
+      "logic_hash": "191395cc721eab91e9d044eec11897d0d31a454d8d6a24e95fab3feaf67c4e82",
+      "raw_hash": "520dd064f6c9e63ed04f8d4a0ea70d9c8bd98f16da9254cc3bf1371ffe3ad8d4",
+      "meta": {
+        "lineno": 11,
+        "end_lineno": 11,
+        "imports": [
+          "__future__.annotations",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_aggregator.py::aggregate_dps": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "381a3f59eb74187ac09fe84dc879f826be75779ba863d6354dbe26a391723835",
+      "raw_hash": "2135f39372f36b0b318aeb55976a5721b73457987d69496e1b9adc6d01b0df51",
+      "calls": [
+        "sum",
+        "sum",
+        "round",
+        "min",
+        "max",
+        "round",
+        "min",
+        "max"
+      ],
+      "docstring": "チャンクスコアを集約して DPS スコアと S_topic_agg を返す。",
+      "meta": {
+        "lineno": 19,
+        "end_lineno": 19,
+        "imports": [
+          "__future__.annotations",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_aggregator.py::aggregate_dps.weighted_sum": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "746743c0d6df17a8840c0ce831e3a888f31649f29046b868c7b75d254ea25133",
+      "raw_hash": "a486021af50c98e1c486286ba52f6b5b34df2ea8443296b3ee586b4d278e7ff7",
+      "meta": {
+        "lineno": 23,
+        "end_lineno": 26,
+        "imports": [
+          "__future__.annotations",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_aggregator.py::aggregate_dps.weight_total": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "07fa9a9bdd4c4b79df6a878adabd4cc5d97c10019fd506a6c8323e6aef86beb4",
+      "raw_hash": "0bce6d0dc04b09eac09f0bcdc84eb8a5b6a2b005a354dd419c8f1ee51fe21a0e",
+      "meta": {
+        "lineno": 27,
+        "end_lineno": 30,
+        "imports": [
+          "__future__.annotations",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_aggregator.py::aggregate_dps.s_topic_agg": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "e33421efb810cea360829c609a3e995f671f691bae2333985b1c639b3f5ddda7",
+      "raw_hash": "8a6d762e976e3fa1dcde9971ae52e18e1ea1ad6880356f9cdf75f3308e823a5c",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_aggregator.py::aggregate_dps.dps_score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "bff17034b4c53b459f3633495bb607e26308b386cee7d3c67a6c6ceac2711cde",
+      "raw_hash": "18c6cb574b8330a44e2f6957ed4dba0fb69ad130639f125c71c9fd172b45b82e",
+      "meta": {
+        "lineno": 32,
+        "end_lineno": 32,
+        "imports": [
+          "__future__.annotations",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_checkpoint.py::CHECKPOINT_FILE": {
+      "type": "variable",
+      "scope": "global",
+      "logic_hash": "da9dc4f49289350984d079c952e44ec2ea67554aee0f42dc03261369761c2220",
+      "raw_hash": "9fd9a8c708492fbbeeb45e4b448199bd41d5f3e6aa986497ebbb95cd34b061b1",
+      "meta": {
+        "lineno": 11,
+        "end_lineno": 11,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_checkpoint.py::load_checkpoint": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "bd51624d9bcc547d8b5100d03b00d9a1f8f406360243d82446fd04e3ed62b0cc",
+      "raw_hash": "160b44e2a3e99f68f0831cda38de4f61c6e0f2e990399b2db7ed07442272dfe3",
+      "calls": [
+        "exists",
+        "open",
+        "load"
+      ],
+      "docstring": "チェックポイントを読み込んで辞書を返す。存在しなければ初期値を返す。",
+      "meta": {
+        "lineno": 15,
+        "end_lineno": 15,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_checkpoint.py::save_checkpoint": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "663aa5a9931586c6348568a8b60bdabdbdddca8d3457b05a7d1da6df52dcadbe",
+      "raw_hash": "c4c24c08c56bcf549490341366b153992b9da42f7e61b8ccf130b07b3d6e7710",
+      "calls": [
+        "write_text",
+        "dumps"
+      ],
+      "docstring": "チェックポイントを JSON ファイルに書き出す。",
+      "meta": {
+        "lineno": 23,
+        "end_lineno": 23,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_checkpoint.py::mark_complete": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "0fdee07a93d2a5cd2d68d381d4c302cde813c77e13faf6fa95b388ad27711034",
+      "raw_hash": "e24b511a717d79874b244682e9949fc449053528689938cb3fd14f01b2f56b8f",
+      "calls": [
+        "load_checkpoint",
+        "save_checkpoint"
+      ],
+      "docstring": "DPS 完了フラグを立てて total_files を記録する。",
+      "meta": {
+        "lineno": 30,
+        "end_lineno": 30,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_checkpoint.py::mark_complete.data": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "7b1a9d14f2286ec219ae4ac54dbc3c31caf163e041bdf39d82bb99ca54121e63",
+      "raw_hash": "fe2efccfe4e1ed35a55fd0fa112bbeb78a5b6f99adb9168b87ce92ca01e07b45",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::CACHE_FILE": {
+      "type": "variable",
+      "scope": "global",
+      "logic_hash": "f855f43c52516163140290dff255a0803fcfaed39a0e830ac7a0ac7c163c789a",
+      "raw_hash": "9a18e54e720dac0c3f48456f03daac394f7a4b00c25bba41a61e339e7180d25e",
+      "meta": {
+        "lineno": 17,
+        "end_lineno": 17,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_cache_key": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "c0aa9fe33e1649115971a3cef4d976e5db2467ff226cdeeca5a814c19d62b2be",
+      "raw_hash": "4e5eb15eb8bea033ae2956550e821e04918d4cd10d3c456ebe57e13ae9f3b271",
+      "calls": [
+        "stat",
+        "hexdigest",
+        "sha256",
+        "encode"
+      ],
+      "docstring": "ファイルパスと mtime の sha256 をキャッシュキーとして返す。",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_cache_key.mtime": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "316ed13d6fad28685b694327965c26bb52d797f2854f45a7c015b43f059738c2",
+      "raw_hash": "cc5014e978bb23be459f167e398619673f1db62994d5cbac17094ec8329a6a35",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 22,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_cache_key.raw": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "bad6d25a15b4251545a6de0fe8bde3344ad5cc43d109aa5af4628eb39f2284df",
+      "raw_hash": "e18bfa21c689a8790582838677834d8e41a6bebca791aeb8ac12878a1d3b65a9",
+      "meta": {
+        "lineno": 23,
+        "end_lineno": 23,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_load_cache": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "ecdc3a538a8f8d469ba8cf9dd60d26b5441e178bfff07fc0c3afdd5ff93f3acd",
+      "raw_hash": "f13c339e8bcde34a6c58d825d3c6f2fbb9978dc94d3cf2bc3a510d623b225120",
+      "calls": [
+        "exists",
+        "open",
+        "loads",
+        "strip"
+      ],
+      "docstring": "キャッシュファイルを読み込んで辞書を返す。",
+      "meta": {
+        "lineno": 28,
+        "end_lineno": 28,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_load_cache.cache": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "8052b5613d7b6cd7b8b0d9d74bf8fd047b6a2e6587166f7595676a83f3a8e091",
+      "raw_hash": "f308a0b4935533387a5f4d313bda8a125c13e05ecf82ba6de3a677a5b506d1d0",
+      "meta": {
+        "lineno": 29,
+        "end_lineno": 29,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_load_cache.entry": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "45e4d9f45c9a8eae082b5762901c1de5b1f44ed9aaa345a2e13ce52effe31463",
+      "raw_hash": "c20af19074a3eb9abac92ebe6c5b6933765729f3562b077fea1864995b681ae6",
+      "meta": {
+        "lineno": 34,
+        "end_lineno": 34,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_save_cache": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "543a6ffc625f6599dd9221a4ea798e275669aa4d0713112b8e9aafa7125d0011",
+      "raw_hash": "ee2d16838fb467898ab1e3eb6c402bca1d254e71a033364fb6298ec713734cdc",
+      "calls": [
+        "open",
+        "write",
+        "dumps"
+      ],
+      "docstring": "チャンクリストをキャッシュファイルに追記する。",
+      "meta": {
+        "lineno": 40,
+        "end_lineno": 40,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_split_chunks": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "451c3a062606ae3d0997c7c0f1ad9efdf038b26c09aea9a1315caf11dfcd3fb6",
+      "raw_hash": "0da98620213448afc2932b51a089f5d84966443b5df81b27c81743994c37e2e6",
+      "calls": [
+        "len",
+        "len",
+        "append",
+        "len"
+      ],
+      "docstring": "テキストを固定幅スライドウィンドウで分割したリストを返す。",
+      "meta": {
+        "lineno": 48,
+        "end_lineno": 48,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_split_chunks.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "fa244768df38dfc0012d4b40120072bd6b70ce50bf565b0e7c851888039d6a08",
+      "raw_hash": "6b129aacba141abfe7364db63cdc63d770182905a8009efe43ae4c7b9661d594",
+      "meta": {
+        "lineno": 51,
+        "end_lineno": 51,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_split_chunks.start": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "84a26b7100c4ab16309eec2d596e350b2db586030792b88dab3497f53c5b20d5",
+      "raw_hash": "15e99d60c00b5e1af7d75724a4fa5b686a6e67637d7c692cecb006b0171b231c",
+      "meta": {
+        "lineno": 52,
+        "end_lineno": 52,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_split_chunks.end": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "5b619fb2d259b696272b469f8e96af7134872023ce55b45d7146814517142164",
+      "raw_hash": "1a57cca0b8c4084714e9b09a593830298e731c623596c15fed86243e938da191",
+      "meta": {
+        "lineno": 54,
+        "end_lineno": 54,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_embed_text": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "5b4384b84a49c7d34875ee1ddee8839840a2eb1550eae899fa83d24aa7ad5fae",
+      "raw_hash": "71cc30850f3d3ad8b9c882cf65ce1fb1d49ab2d4d524029bae02d3cb40c1da70",
+      "calls": [
+        "encode",
+        "dumps",
+        "Request",
+        "urlopen",
+        "loads",
+        "read"
+      ],
+      "docstring": "Ollama embed API を呼び出して embedding ベクトルを返す。",
+      "meta": {
+        "lineno": 63,
+        "end_lineno": 63,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_embed_text.payload": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c88b16c51ca829f50b5d1a06409d2fd5a48417304ed7e3b283ef506c0ca23138",
+      "raw_hash": "8a84318da2ac702b9d750f8079f57adadfa20c591586d611193424ba494f917c",
+      "meta": {
+        "lineno": 64,
+        "end_lineno": 64,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_embed_text.req": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "94be155083c62d782dd0825c0b9fe64a4a3cf3c71b7d9164702428d14a983a86",
+      "raw_hash": "efb87e466c642280de896e1d48abbaf6f71d662b72e8193c7326a74ad2656363",
+      "meta": {
+        "lineno": 65,
+        "end_lineno": 70,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::_embed_text.data": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "a573221d22c4f0c89b7222ee8787cbbce4b833ac202d151222686d16d5c609d6",
+      "raw_hash": "df1206e7b636c25e8498e91e9e7a01ce87f184e4a1e578b53e57be71f23be8bb",
+      "meta": {
+        "lineno": 72,
+        "end_lineno": 72,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::embed_file_chunks": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "e53f7abff60a349652ff9d406e3b94952f387da9c119173d362b9a2de14f88ad",
+      "raw_hash": "74df83d6490093c7fdb0e1d74aa11fe568e7a878733cdc9968c86ac6b2a55b60",
+      "calls": [
+        "load_config",
+        "_cache_key",
+        "_load_cache",
+        "_split_chunks",
+        "_embed_text",
+        "append",
+        "_save_cache"
+      ],
+      "docstring": "チャンク分割+Embedding 結果を [(text, vec), ...] で返す。キャッシュ利用。",
+      "meta": {
+        "lineno": 81,
+        "end_lineno": 81,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::embed_file_chunks.cfg": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ed1d9edec8f9bfd7868c9386730cdfab9c41e8ad56d4574e56c27ebed8188629",
+      "raw_hash": "8c106bc4a394b67fca07803d4f7c7d94b6b5f54b6f004dbe6d0bb7ec7b7bf2e6",
+      "meta": {
+        "lineno": 82,
+        "end_lineno": 82,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::embed_file_chunks.key": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "6f22a551d971fadda9d547cc5e396edcd325c586f072899b3619000648d52bf2",
+      "raw_hash": "6f083467ed72c00b61371488be0a01d151acc210bd711a82fe33a1c9ac91476c",
+      "meta": {
+        "lineno": 83,
+        "end_lineno": 83,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::embed_file_chunks.cache": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "2beead9cb91205d792c6f61536c4bfad43dcad978919611ccc3a8554c177417c",
+      "raw_hash": "32081d01552b502f078c615830f54df14df2c1b44379be02d6aa629392c9721e",
+      "meta": {
+        "lineno": 84,
+        "end_lineno": 84,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::embed_file_chunks.raw_chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ee86012b769bf9ab640e01400abadc2c4ff84779da0125e6387026828aade09d",
+      "raw_hash": "528eab355f5139c18f444733212c95e719f5bf55f88aa622b992dc0ff874bc7a",
+      "meta": {
+        "lineno": 88,
+        "end_lineno": 93,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::embed_file_chunks.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "f46a0d89503b70883211df3a84fa7ea14a512c4a09e1e71b7a0e6ab85ccf4441",
+      "raw_hash": "1142a778ca2fae35415037cd818832bb9b98acb01e8ac5e1355ea43b071ca00c",
+      "meta": {
+        "lineno": 94,
+        "end_lineno": 94,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_chunk_embedder.py::embed_file_chunks.vec": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "4ecaefe2036a3b39520595edff88c500c23dea96a7f18daa83aca3a394633201",
+      "raw_hash": "bc3c6a9c971b610040d59787fb880021a7f25bbc75fcf6a24f7b707c2a8584c1",
+      "meta": {
+        "lineno": 96,
+        "end_lineno": 96,
+        "imports": [
+          "__future__.annotations",
+          "hashlib",
+          "json",
+          "urllib.request",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_config_loader.py::DEFAULT_CONFIG_PATH": {
+      "type": "variable",
+      "scope": "global",
+      "logic_hash": "7b830f2fb721c25ee305f0be5ab147696f156dd13dea532ce2201316c5c3f12d",
+      "raw_hash": "1a9ec7d3233b557276ee2960c981104f5706666f5b2d89fba60da4ddc1c17920",
+      "meta": {
+        "lineno": 11,
+        "end_lineno": 11,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_config_loader.py::load_config": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "e80ab6486227e216927648f6d40b42a03229c47cc1497ba41e35b0a7de91661e",
+      "raw_hash": "4999d14d9b2059abb7514970fa2bba9941694a8f45c517c67b325f46a37e4347",
+      "calls": [
+        "exists",
+        "FileNotFoundError",
+        "open",
+        "load"
+      ],
+      "docstring": "設定ファイルを読み込んで辞書を返す。",
+      "meta": {
+        "lineno": 15,
+        "end_lineno": 15,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_init.py::_embed_text": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "5b4384b84a49c7d34875ee1ddee8839840a2eb1550eae899fa83d24aa7ad5fae",
+      "raw_hash": "71cc30850f3d3ad8b9c882cf65ce1fb1d49ab2d4d524029bae02d3cb40c1da70",
+      "calls": [
+        "encode",
+        "dumps",
+        "Request",
+        "urlopen",
+        "loads",
+        "read"
+      ],
+      "docstring": "Ollama embed API を呼び出して embedding ベクトルを返す。",
+      "meta": {
+        "lineno": 17,
+        "end_lineno": 17,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "urllib.request",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_init.py::_embed_text.payload": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c88b16c51ca829f50b5d1a06409d2fd5a48417304ed7e3b283ef506c0ca23138",
+      "raw_hash": "8a84318da2ac702b9d750f8079f57adadfa20c591586d611193424ba494f917c",
+      "meta": {
+        "lineno": 18,
+        "end_lineno": 18,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "urllib.request",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_init.py::_embed_text.req": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "94be155083c62d782dd0825c0b9fe64a4a3cf3c71b7d9164702428d14a983a86",
+      "raw_hash": "efb87e466c642280de896e1d48abbaf6f71d662b72e8193c7326a74ad2656363",
+      "meta": {
+        "lineno": 19,
+        "end_lineno": 24,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "urllib.request",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_init.py::_embed_text.data": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "a573221d22c4f0c89b7222ee8787cbbce4b833ac202d151222686d16d5c609d6",
+      "raw_hash": "df1206e7b636c25e8498e91e9e7a01ce87f184e4a1e578b53e57be71f23be8bb",
+      "meta": {
+        "lineno": 26,
+        "end_lineno": 26,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "urllib.request",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_init.py::build_prototype_vecs": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "0d35631809044d3ac496819f5d78f70208f4e2e1bb5f18d8e10800e82f9b34d2",
+      "raw_hash": "7234a980b79d2182be4a961fb480abe882cb63e70b4d1bbcca22ba55a5f16023",
+      "calls": [
+        "load_config",
+        "_embed_text"
+      ],
+      "docstring": "プロトタイプテキストを Embedding してベクトルリストを返す。",
+      "meta": {
+        "lineno": 33,
+        "end_lineno": 33,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "urllib.request",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_init.py::build_prototype_vecs.cfg": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ed1d9edec8f9bfd7868c9386730cdfab9c41e8ad56d4574e56c27ebed8188629",
+      "raw_hash": "8c106bc4a394b67fca07803d4f7c7d94b6b5f54b6f004dbe6d0bb7ec7b7bf2e6",
+      "meta": {
+        "lineno": 34,
+        "end_lineno": 34,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "urllib.request",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_init.py::build_prototype_vecs.url": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "5ad517bc3b5b718cbefc564459297d9b5aa4b177cb1a65e6ead3245814ec7300",
+      "raw_hash": "3d4deefea0c662af6e6c5b0beedad0c1f56d851de8cb8f05570d2eb48739cb7d",
+      "meta": {
+        "lineno": 35,
+        "end_lineno": 35,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "urllib.request",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_init.py::build_prototype_vecs.model": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "66978768a3cc0255c1e4be2a14016eab79f2823f2db6b3e015fbd385039c160f",
+      "raw_hash": "ce9bed78321c4212d28aef3dffea43d1c93888296c439836edfedf9ef82220d2",
+      "meta": {
+        "lineno": 36,
+        "end_lineno": 36,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "urllib.request",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_mtime_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "ac2d8f264c4242d6aa4f8ef5231894d70eb0d2a02b878407834b8d209d56eb0d",
+      "raw_hash": "2c843c3821172b6942eee1dc7376f7a8232d64d76b6f3babd90afe994da66190",
+      "calls": [
+        "time",
+        "stat",
+        "exp"
+      ],
+      "docstring": "mtime 新しさスコア（指数減衰）を返す。",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_mtime_score.days_old": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "62aba47e117b6ca7d0a2f4d00c50c2d943e38106f6eac57260eb76f239e99d1c",
+      "raw_hash": "e1e82c1c6beec6510a05d03680f4ad32f22a629d94032e40ffff0b4e173e34da",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 22,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_keyword_hit_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "193a2e19311b72c4116511b1c8e3c55cf18a034a83afc079b75da5bcff22feee",
+      "raw_hash": "94ba08a61ce82479585ccaf872fafc0e58ead6fb710491fcc182148bfa1e38c8",
+      "calls": [
+        "set",
+        "split",
+        "lower",
+        "as_posix",
+        "sum",
+        "lower",
+        "min",
+        "len"
+      ],
+      "docstring": "フォルダパストークンとシード語の一致割合を返す。",
+      "meta": {
+        "lineno": 27,
+        "end_lineno": 27,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_keyword_hit_score.tokens": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "70e4cbc8f20bcfbfe5abd748449ed94763fd377e4f7e00c5626d330cd174e31a",
+      "raw_hash": "b332a187ea6fd5c007d79268b1397aa26442ff2fa46546deb3203813f258afe0",
+      "meta": {
+        "lineno": 28,
+        "end_lineno": 28,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_keyword_hit_score.hits": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c2120bceb3d9ac4ed20355c792b6100df3bdbea8fa52e85231971a4b8fd5cf2c",
+      "raw_hash": "aa218c0108a4eca854c9c2c0a3fe4ea8559abfbd58c414845fbc189041facd1b",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_filetype_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "ef23a11da6ef0679c8bb99efbb3cd984dde0ce2fbe591b63e9574419d77cc26d",
+      "raw_hash": "53954d7f4a74639717511127837fd3703ea0db0645478d641a8e720b0153e2f5",
+      "calls": [
+        "get",
+        "lower"
+      ],
+      "docstring": "拡張子テーブルからファイル種別スコアを返す。",
+      "meta": {
+        "lineno": 36,
+        "end_lineno": 36,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_path_depth_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "f6e80e09eea2196bbafd2c92611ca514a963e2f1baeb0e7ef91690867cb323b9",
+      "raw_hash": "3925275e8c41b9dd34518896f21f112f0561bd2384348a4ec9c70a45eb5dd24f",
+      "calls": [
+        "len",
+        "abs",
+        "max"
+      ],
+      "docstring": "パス深さが ideal_depth からの乖離で減点したスコアを返す。",
+      "meta": {
+        "lineno": 41,
+        "end_lineno": 41,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_path_depth_score.depth": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "54d0f70c19ccc5a8c882fb6c9e72622c10cdee4d1f97d82290133f0db99c1df2",
+      "raw_hash": "a831bf360ddbe4768b71114fdc0eef38135f6fbe5f4b96e6ef1a314dbaf5d0ff",
+      "meta": {
+        "lineno": 42,
+        "end_lineno": 42,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_path_depth_score.diff": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "72b401f2f83832e8b462fde4ad7b164d74468dfe9fafafc40b44326299410f31",
+      "raw_hash": "0be2902f3610a9cd31daf16aff8eecbbc3a22abc17a20e5fceb6a1f599aaf441",
+      "meta": {
+        "lineno": 43,
+        "end_lineno": 43,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_size_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "b678aba1f22b15ef2c62b2e8fa18b5e95850ee5c9dd10e8356403ef4985e7ad0",
+      "raw_hash": "1a745cfb2fc3ee071b7af987aa1da949ec5213773cdf1e067911f869a5fa02c9",
+      "calls": [
+        "stat"
+      ],
+      "docstring": "ファイルサイズが範囲内なら 1.0、範囲外は 0.5 を返す。",
+      "meta": {
+        "lineno": 48,
+        "end_lineno": 48,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_size_score.size": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "6f06556b31afd3ff0ae3f67ce690df4c1fc58464a33c1ffc73909d311e1e2e77",
+      "raw_hash": "b1622fe7cc2db3c37b1894686e1e3e25b3359c6afcc5d2209d92579441ffb2cb",
+      "meta": {
+        "lineno": 49,
+        "end_lineno": 49,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_folder_density_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "71a75b29348aa272b3468f461969997c2fb1e4f3a0e7a7921886b2db40abab9b",
+      "raw_hash": "bc93c5f922f32f257ace279f60171f4cb829b24dc2d2035149ec0cc5685fda04",
+      "calls": [
+        "sum",
+        "iterdir",
+        "is_file"
+      ],
+      "docstring": "同フォルダ内ファイル数が閾値超なら減点したスコアを返す。",
+      "meta": {
+        "lineno": 56,
+        "end_lineno": 56,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_folder_density_score.parent": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "0e27505cdf8c45bf249330b101ed7d9c5dbde1dfeee92ff2786fe99ea2902647",
+      "raw_hash": "049c9d941f37cc942c697e807d86189d16281e651ffa579bc97523725ecaa1c1",
+      "meta": {
+        "lineno": 57,
+        "end_lineno": 57,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_folder_density_score.count": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "4ed2035c2d8a4954d4187073915b3123c7f58a38221097332c84869f7f71e555",
+      "raw_hash": "9502f5fb44326a944ae585403d4709eec0f38bb48052f039b22463dd90aba7c0",
+      "meta": {
+        "lineno": 59,
+        "end_lineno": 59,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_semantic_path_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "d9c0dfcf7ac7b1bcc80c6ddbf9b988327fdfb7e6ba35d989603a8dccdd17f032",
+      "raw_hash": "0b939dae0ba274acf0289ea22da13aec95cadfa099e43ea3bb3f7437a64d22a3",
+      "calls": [
+        "split",
+        "lower",
+        "as_posix",
+        "join",
+        "encode",
+        "dumps",
+        "Request",
+        "urlopen",
+        "loads",
+        "read",
+        "max",
+        "cosine_similarity"
+      ],
+      "docstring": "Semantic Path Score を計算して返す。失敗時はフォールバック値を返す。",
+      "meta": {
+        "lineno": 73,
+        "end_lineno": 73,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_semantic_path_score.tokens": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "8731f59db3ca7aa16fb81e5c9a77aa4199621302fb1a006011c4a6d93f3c1497",
+      "raw_hash": "c739db435266a73c29885152d8fc7288a0d8123852cb5d3253130100dbb082ee",
+      "meta": {
+        "lineno": 78,
+        "end_lineno": 78,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_semantic_path_score.text": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "785bb6a2765eed4b634685aa06064d1db3a58926d59e13cd9f3b0e523cbf3346",
+      "raw_hash": "1887582c886dfde5218d6db6233773fb1e465fb96489d29cda4e5fd9956ae69a",
+      "meta": {
+        "lineno": 79,
+        "end_lineno": 79,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_semantic_path_score.payload": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c88b16c51ca829f50b5d1a06409d2fd5a48417304ed7e3b283ef506c0ca23138",
+      "raw_hash": "8a84318da2ac702b9d750f8079f57adadfa20c591586d611193424ba494f917c",
+      "meta": {
+        "lineno": 81,
+        "end_lineno": 81,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_semantic_path_score.req": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "94be155083c62d782dd0825c0b9fe64a4a3cf3c71b7d9164702428d14a983a86",
+      "raw_hash": "01b511e041ac78527ec79f9bc5a88f92c0a72bd0247a8db34e8e9abfeec1a0aa",
+      "meta": {
+        "lineno": 82,
+        "end_lineno": 87,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_semantic_path_score.data": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "a573221d22c4f0c89b7222ee8787cbbce4b833ac202d151222686d16d5c609d6",
+      "raw_hash": "df1206e7b636c25e8498e91e9e7a01ce87f184e4a1e578b53e57be71f23be8bb",
+      "meta": {
+        "lineno": 89,
+        "end_lineno": 89,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_semantic_path_score.vec": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "adaf87029b7739f2f5c493e1d0aa5491a31c03c56554d8e680c686fe47f2d132",
+      "raw_hash": "bdf35e6cc4d399aa26a95d7ee64789d5f73316f1e28f7b87b6759c1c292288b7",
+      "meta": {
+        "lineno": 90,
+        "end_lineno": 90,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::_semantic_path_score.score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "d7298bbbccdf48926b898629419db406e8124a3de7efb0f2660432f889efbb3b",
+      "raw_hash": "c3812fbdfac884e53b4d57bb736c0b1e7182de1e572b2efe5ea3b7c7c5802c88",
+      "meta": {
+        "lineno": 91,
+        "end_lineno": 91,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "0f308d72f3f036b9a12cfc4f821e1d1d1ab1eb4b06a35fc424c9f5a6991d6e19",
+      "raw_hash": "fbfa243222cf905802c727ddd74a0c125af3d31706ec04f92a1fd379f2520add",
+      "calls": [
+        "load_config",
+        "_keyword_hit_score",
+        "_semantic_path_score",
+        "_mtime_score",
+        "_filetype_score",
+        "_path_depth_score",
+        "_size_score",
+        "_folder_density_score",
+        "min",
+        "max"
+      ],
+      "docstring": "7シグナルを加重合計して S_meta と各シグナル値を返す。",
+      "meta": {
+        "lineno": 106,
+        "end_lineno": 106,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.cfg": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ed1d9edec8f9bfd7868c9386730cdfab9c41e8ad56d4574e56c27ebed8188629",
+      "raw_hash": "8c106bc4a394b67fca07803d4f7c7d94b6b5f54b6f004dbe6d0bb7ec7b7bf2e6",
+      "meta": {
+        "lineno": 107,
+        "end_lineno": 107,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.kw_score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "d6165ee79417a19793525d91e9bd2410ae4c96985e2e457a0192719fdb5a7e75",
+      "raw_hash": "8ae57dd17a04259d25f3ee1fb9cec122b0a8898171000d5b02f4e8b19fce478a",
+      "meta": {
+        "lineno": 109,
+        "end_lineno": 109,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.sem_score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "e42f6aa03f69f10bbf7ad77b03e7a8982610f357dfa4659b8380d52907e06377",
+      "raw_hash": "c5c81784425192de6fe8d1bae1d04cbb42fce156be4382a3a4124b7387ef1f13",
+      "meta": {
+        "lineno": 110,
+        "end_lineno": 117,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.mt_score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "9973d836b3e1f6edbc2dd92c4f3752b822491f4bd6923dd48e95bbd6e2963e17",
+      "raw_hash": "312a7c6cc60f5921dc4e97451a54fa2f61236ea3585b73d29c00869f4b794e57",
+      "meta": {
+        "lineno": 118,
+        "end_lineno": 118,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.ft_score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "57aff0caa76a5f4405308e895604f08690789ac23d9ca975005f4df3b4575db5",
+      "raw_hash": "e9e70edfe075159eb4e079da80f9499d45bda69e614c52fda2b4f24da40416bc",
+      "meta": {
+        "lineno": 119,
+        "end_lineno": 119,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.pd_score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "58e86adb98fb2e638526340b3cbc37b7b4d9c9c29ca941d5f16542188721f778",
+      "raw_hash": "69a3a7c56029bd25fab38e22b4872f623e98ac43e3362a7413027e39b194bbaf",
+      "meta": {
+        "lineno": 120,
+        "end_lineno": 120,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.sz_score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "4ce00457516fab8ab3702c85cf52e81e22cc59d8a4bf67326423bd270ada0c5b",
+      "raw_hash": "b5015d2a4634f424f1dfc4f1b38672da9e2b89fbdc855f1d7a42b52afa511574",
+      "meta": {
+        "lineno": 121,
+        "end_lineno": 121,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.fd_score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ac50a7d898ff49d3b3660853b2c2e387b6f18d44d4afc42bd8c245fdef7c3a01",
+      "raw_hash": "751ee873d8f577b00b03eb8588e0700facb6ab0b1d2a1c6cc63ae123542a184c",
+      "meta": {
+        "lineno": 122,
+        "end_lineno": 122,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_meta_scorer.py::compute_meta_score.s_meta": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "0618374b8145ff303763cf64137f59dff179f63c2d07110b63f8d4fa983f87f9",
+      "raw_hash": "7d8ea23fc04ff047fdbe3940b874f2ea0b08fed31ceee294a6f4773e8567a775",
+      "meta": {
+        "lineno": 124,
+        "end_lineno": 132,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "os",
+          "re",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_queue_builder.py::build_priority_queue": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "61134b1ab7d6d38644b4f7cd4052b99d2d5faac8652349f92e71943565973c36",
+      "raw_hash": "9831846ee73292fb577d8bb3393e5484d9b04646f8c6a1678f23a1f3bded2665",
+      "calls": [
+        "Path",
+        "sorted",
+        "open",
+        "enumerate",
+        "write",
+        "dumps"
+      ],
+      "docstring": "records を dps_score 降順でソートして JSONL に書き出し、パスを返す。",
+      "meta": {
+        "lineno": 17,
+        "end_lineno": 17,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_queue_builder.py::build_priority_queue.sorted_records": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "389aaafb8585e52c1775962fc613a84c3be178d5a4f797701cee521a5fc4145b",
+      "raw_hash": "98bfec8f0090192958a0feb02f81373459ca0264ac36e2d3ba63028c132d5767",
+      "meta": {
+        "lineno": 18,
+        "end_lineno": 18,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_queue_builder.py::build_priority_queue.entry": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "abdd70abb52bde7f4b22062df01cfb5331aee3bd2ca64091440eb1a161b1e70c",
+      "raw_hash": "42114a0fcd5be9b89d8f86d8db8b44b534ec0e03951f2ac693c96a5983910b22",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 26,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_record_writer.py::write_record": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "788b6d10d41906f4de7b0a53b247a3a14c65d5ebc10ae7b65918944bcb53bc31",
+      "raw_hash": "6c770d7e0e149ec54e3be459644aa1eecd69f399edfb23b02d57babd09602ed2",
+      "calls": [
+        "list",
+        "str",
+        "strftime",
+        "now",
+        "Path",
+        "str",
+        "write_text",
+        "dumps"
+      ],
+      "docstring": "スコアリング結果を JSON ファイルに書き出してパスを返す。",
+      "meta": {
+        "lineno": 24,
+        "end_lineno": 24,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "datetime.datetime",
+          "datetime.timezone",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_record_writer.py::write_record.topics": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "79af7f96a0c132e046cc4a0f0732f2b06e61a33fa541a62a07878bbb397bafda",
+      "raw_hash": "1916349068b44b560288d97616c9423ed7c396f53567b0258e7cd6ec5c9332e3",
+      "meta": {
+        "lineno": 25,
+        "end_lineno": 29,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "datetime.datetime",
+          "datetime.timezone",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_record_writer.py::write_record.record": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c3d41459bd7c07fdd976465c088a169f4e8ae1dc674437c83816500a3c49cb6d",
+      "raw_hash": "491f86993ce49b59868b1dfcc58a70a18cae9c062dbb097e7ead5cedf49e3420",
+      "meta": {
+        "lineno": 33,
+        "end_lineno": 44,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "datetime.datetime",
+          "datetime.timezone",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_record_writer.py::write_record.out_path": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ae28d30c0c3295e4643e4068d8972fec1aee17f9c840b479c36dce070c9d12a7",
+      "raw_hash": "32c5ab2abfae5cfec9ee586414a1e35b2e07d9b3fb3b128a9f07e736df09096f",
+      "meta": {
+        "lineno": 45,
+        "end_lineno": 45,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "datetime.datetime",
+          "datetime.timezone",
+          "pathlib.Path"
+        ]
+      }
+    },
+    "sources/dps_runner.py::_read_text": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "2dd7a97f3746ae1ffacc1175ade431213037b51bdddc8e0ad9f60ce5163c8b08",
+      "raw_hash": "f6c4a329f1e251928375edea9af06443c73d1dafdfd2076aaa56c7836b573b61",
+      "calls": [
+        "read_text"
+      ],
+      "docstring": "ファイルテキストを読み込んで返す。バイナリは空文字を返す。",
+      "meta": {
+        "lineno": 26,
+        "end_lineno": 26,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::_walk_files": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "d8982971ce5f42c728acc4f62075edd11f861dd497073362bc5d6dd2263e8919",
+      "raw_hash": "87d4ed0243770fae46a48ee076c86dd61d3daa78e2605171841e9e93b0b78da9",
+      "calls": [
+        "rglob",
+        "is_file"
+      ],
+      "docstring": "ルートディレクトリ以下の全ファイルパスを返す。",
+      "meta": {
+        "lineno": 34,
+        "end_lineno": 34,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "94783b15d6c4a88af121ae5ec0bffb147b86aac70ae254f439daa3b2610a45ed",
+      "raw_hash": "2d351fd379de55110b6fd536726edb64b83bbb11a2d6c50309af0d7d5cf36eb4",
+      "calls": [
+        "Path",
+        "exists",
+        "print",
+        "SystemExit",
+        "load_config",
+        "load_checkpoint",
+        "set",
+        "get",
+        "print",
+        "build_prototype_vecs",
+        "_walk_files",
+        "print",
+        "len",
+        "str",
+        "Path",
+        "str",
+        "exists",
+        "loads",
+        "read_text",
+        "append",
+        "_read_text",
+        "compute_meta_score",
+        "extract_year",
+        "year_weight",
+        "temporal_decay",
+        "embed_file_chunks",
+        "compute_chunk_scores",
+        "aggregate_dps",
+        "str",
+        "append",
+        "write_record",
+        "add",
+        "str",
+        "build_priority_queue",
+        "mark_complete",
+        "len",
+        "print",
+        "len"
+      ],
+      "docstring": "DPS スコアリングを実行してキューとチェックポイントを書き出す。",
+      "meta": {
+        "lineno": 39,
+        "end_lineno": 39,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.root": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "95751bb89b34ca525c886407bdd03f9a3851889ab373cfba649e0557b61a060b",
+      "raw_hash": "477b0eff12fa82e4e1ed8c963cad91c44240322d0746f3007c1bf8a15db2b220",
+      "meta": {
+        "lineno": 40,
+        "end_lineno": 40,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.cfg": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "b906514e568a0703a25950273db386aa80597a4601a65de0bb5fc907cf662ff9",
+      "raw_hash": "6d138a54ee00b8bd914debf6eb7aebfc700df8183843c406f23e9d3586f2912d",
+      "meta": {
+        "lineno": 45,
+        "end_lineno": 45,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.checkpoint": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "9c2995b689723342fd5f98bc9e7a3d3eeef6df38c4784e493923272497eadfb3",
+      "raw_hash": "d0978fe4dd5658f3646b168fdd53f451de2c7280915b41938296220164641c93",
+      "meta": {
+        "lineno": 46,
+        "end_lineno": 46,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.already_scored": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "f0477ac43d24031cacaf0b14849aaf4ec372563af701963c715e5f5e25a6fb51",
+      "raw_hash": "61cc75066e9a2decde59799a6d2eb3458ea51c7489968ff6deae3c6c60182307",
+      "meta": {
+        "lineno": 47,
+        "end_lineno": 47,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.prototype_vecs": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "862b5f663bad8f6004bafc0126493a4a756a6e1daa2a4075de5208fad5a5315d",
+      "raw_hash": "347ed046fd4d75d2cf43bd87e75a4ee06abd267ecfbe9b38de3422712a3555f5",
+      "meta": {
+        "lineno": 50,
+        "end_lineno": 50,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.files": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "a63a2430d8f88ec5815afcbb87aadb7db340c9c78f11ef25637cd7321b65c70e",
+      "raw_hash": "9a43dde3f08b278684b38c8e444cfc6238ebab3b4f6bf37cdd05ca2fe2d303d6",
+      "meta": {
+        "lineno": 52,
+        "end_lineno": 52,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.all_records": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "2549351efcc0079ea00c5ebf612f41a0fbb1aa9f2f3b0fafbbf0f11de6761318",
+      "raw_hash": "1b5045a688f175a5dfb69aac4241c748c770b4e04c4b1a3c02397457cc493563",
+      "meta": {
+        "lineno": 55,
+        "end_lineno": 55,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.json_path": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "7efb9c21255d8038b0ec2bcaa95e639cacf9a37f827395b8e28901f89d5cbbf0",
+      "raw_hash": "1cce5c71d82eaff300e05a1ddfe67531ccf5658debaed2f3f562cf5ada893961",
+      "meta": {
+        "lineno": 59,
+        "end_lineno": 59,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.rec": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "2b2e82d8134a5f9f7bf4c43d4780801b58194db2124acb4a5be08a40c545259e",
+      "raw_hash": "26ff99d88598da7ed95d1fd33d370d04105445904a3e851317a84d6804265110",
+      "meta": {
+        "lineno": 77,
+        "end_lineno": 83,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.text": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "7f76f46ea8f9d1d1f2e30d2bf6a1c9639df0fade579c9b3758a7f0babc253133",
+      "raw_hash": "deb54794e9ece14876e35ae12f5de5f5e438b11cb4f5c013826a023cb9ef3849",
+      "meta": {
+        "lineno": 66,
+        "end_lineno": 66,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.meta": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "f1cbe7b3d7341c386611fd60730e65db8f34b0f1946c16fa58209da5b94e7cbb",
+      "raw_hash": "b353d0c6411beb6f94f0a1c3adf267ab741caa321d3b763e9d24038ed6754d09",
+      "meta": {
+        "lineno": 67,
+        "end_lineno": 67,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.yr": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "9b178dc93e52ef29d203311ea3a4c2c762e6369183b11e0a5023940edc9f1ad2",
+      "raw_hash": "a8928219801b9fd8539d886d0bd192c165c053f23a7c21f4b24be13059ea1e83",
+      "meta": {
+        "lineno": 68,
+        "end_lineno": 68,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.yw": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "d774031517a70bb892f24948afbe1decf4c490d11e683424ecd71c7414b7e65f",
+      "raw_hash": "d26642ed0356549134dac6387e75f04fb27f362e98320afa77c86c47d5cba78a",
+      "meta": {
+        "lineno": 69,
+        "end_lineno": 69,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.decay": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "0ee6b8e19b86fb26ece38fcb9a24f9e15de08b5f9363fe11c815cc670035ceb0",
+      "raw_hash": "361ee6909e22e1d3eec09118243b9cdd69d05fbb898c916b7377053b271e6d7d",
+      "meta": {
+        "lineno": 70,
+        "end_lineno": 70,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "df5392add0a44918f3397c6ea303ffe740435ee0dcd755d893523d79c00cb511",
+      "raw_hash": "fba2a8be629eae5a823a6f9ab52b6a3410df21a5b17d0b642dcc100053bcf0ac",
+      "meta": {
+        "lineno": 71,
+        "end_lineno": 71,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.chunk_scores": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "3fcb3a477e9448f4617fc26cae51b6589c994523921299ddd98a4bda62170735",
+      "raw_hash": "f8ffe11228438e382bdfc1304281df404dfaa19725dad751e4d576b94d657127",
+      "meta": {
+        "lineno": 72,
+        "end_lineno": 74,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_runner.py::run.agg": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "021fc30f390f8784a0cb06144d2392b2c794215458e2a9e22b981580356a4e12",
+      "raw_hash": "777b63d0c1be8964606131c8bfb79b6ef236a0d1c6f1d5daf707032bf940660d",
+      "meta": {
+        "lineno": 75,
+        "end_lineno": 75,
+        "imports": [
+          "__future__.annotations",
+          "sys",
+          "pathlib.Path",
+          "typing.List",
+          "sources.dps_config_loader.load_config",
+          "sources.dps_init.build_prototype_vecs",
+          "sources.dps_meta_scorer.compute_meta_score",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight",
+          "sources.dps_chunk_embedder.embed_file_chunks",
+          "sources.dps_topic_scorer.compute_chunk_scores",
+          "sources.dps_topic_scorer.temporal_decay",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_record_writer.write_record",
+          "sources.dps_queue_builder.build_priority_queue",
+          "sources.dps_checkpoint.load_checkpoint",
+          "sources.dps_checkpoint.save_checkpoint",
+          "sources.dps_checkpoint.mark_complete"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::_rank_list": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "bd7623b6f0bb7dbb7e0da1ff9d459646e960bf52452d026abbdb869d3e3c0842",
+      "raw_hash": "4cc3548e86e8483559a85ae28395e18bc7d7b0f5710e7803762f5a410b007db0",
+      "calls": [
+        "sorted"
+      ],
+      "docstring": "スコア降順のランクリストを返す。",
+      "meta": {
+        "lineno": 14,
+        "end_lineno": 14,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::_rank_list.sorted_r": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "bbf4ef3603ce81c21db31c2323eb3f6a9035dd2b6fe995d7f01ff08048f7299d",
+      "raw_hash": "5d534b035f9c4fbdd7be8eee2415973088c65f1f69b78b3be1f2d58524d774d7",
+      "meta": {
+        "lineno": 15,
+        "end_lineno": 15,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::spearman_rho": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "31b1828fb75e07492434c27529412b513887975ca0cfeaa73c4cd67151402a23",
+      "raw_hash": "0b4c6e7fb47c0ff7e79035ff7ff3d86f47922ffe7881cdf04bd7e7df157bd993",
+      "calls": [
+        "len",
+        "_rank_values",
+        "_rank_values",
+        "sum",
+        "zip"
+      ],
+      "docstring": "2つのリストの Spearman 順位相関係数を返す。",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::spearman_rho.n": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ea1549fdf24c62b044efa14e546839f4b92a461995a1595e573ade49bcfe193b",
+      "raw_hash": "1c526be0cb6a27c1a9a38da0e1dbac2698876a6dc418262b6a01f9cd7e66b65a",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::spearman_rho.rank_x": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "5f65d9693b6af856d218a6c94c617f68605d4395f7f759cb9fab432a24dd4bc8",
+      "raw_hash": "a4f5a224267d6e4e775c0f8ab99027bdbb5ba07409dede80e74efc1f4c6cee00",
+      "meta": {
+        "lineno": 24,
+        "end_lineno": 24,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::spearman_rho.rank_y": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "7a3ccedab3d403ad3a95bc8b743248ad2cca7906f4f15699461a9e085cc1d4fc",
+      "raw_hash": "63f58313a5d133233a8a273026bd6f19db965ca8170637bbfa6785f6eebbcf43",
+      "meta": {
+        "lineno": 25,
+        "end_lineno": 25,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::spearman_rho.d_sq_sum": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "763cd8ea1ae5a4ec30361869e2e04d022980458de52001cbf3a5780a6a40be35",
+      "raw_hash": "f33412264196c8c3c517db9e6ef0f4fe05a6af51e5d4dc0f6a1a537c6a87eb4c",
+      "meta": {
+        "lineno": 26,
+        "end_lineno": 26,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::_rank_values": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "4f2c443968e335d4d39e160ff976e336479102a0f9c11448fdde54d4287b005e",
+      "raw_hash": "73ab4a7fc4305eccd234506b5d1b62d5b09112f784fbb2c8b831b0dd4459ef6b",
+      "calls": [
+        "sorted",
+        "enumerate",
+        "len",
+        "enumerate"
+      ],
+      "docstring": "値リストを順位リストに変換して返す（降順）。",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::_rank_values.indexed": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "3aabf03637052e53df4f4905a3b1965c9309b041d83157fbcea2609d42309d5b",
+      "raw_hash": "76c9684ebc8494fa28fa66d237183620d1217f93935d6db42aa88dd53b1001a2",
+      "meta": {
+        "lineno": 32,
+        "end_lineno": 32,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::_rank_values.ranks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "51d4b34148789d6c4d14624e205d64cf32b04ca8a604f19f1e8751a71ee81965",
+      "raw_hash": "a4e54fcd213b6b5357cca585622aeb1b6c2bd659326475bf1de54c49fe4e9f69",
+      "meta": {
+        "lineno": 33,
+        "end_lineno": 33,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::run_sensitivity": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "4588e8fe6e2f477e76391a4144ce029edf08d7951ad87955ffcbf5ce46aef665",
+      "raw_hash": "e5020cb18efb9ab1d63d71846677bde7b0c878fd98a7f0d96fcfd6e591ee6db7",
+      "calls": [
+        "spearman_rho",
+        "round"
+      ],
+      "docstring": "alpha を ±20% 変動させて Spearman ρ を計算して返す。",
+      "meta": {
+        "lineno": 45,
+        "end_lineno": 45,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::run_sensitivity.base_scores": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "fa699c41333f3a2ad0a5b464ee979ab0ea30bef6d463959f52a54b3273c33878",
+      "raw_hash": "483f0f39631d006f5855147fe3342d42abf8c6c1960b08a5358fa4303499f08e",
+      "meta": {
+        "lineno": 46,
+        "end_lineno": 50,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::run_sensitivity.results": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "e0aa1f52a2438b452c7b0f8483d2f9477009aa077362c7f9c160ef2d1a3d169d",
+      "raw_hash": "3b2b7d06456dec23c163f238d538e176a65cb446a08d9f1c05aaafb06f460232",
+      "meta": {
+        "lineno": 51,
+        "end_lineno": 51,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::run_sensitivity.perturbed": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "0f0bc9ddda56fc75b4b2ba19b07318fe061bc0afb1805f2b248c82efcf9bea64",
+      "raw_hash": "165fcbef8fb57d3d4a85326fe35faf3162d82e091b34fd190c510a7a1b7272cb",
+      "meta": {
+        "lineno": 56,
+        "end_lineno": 60,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_sensitivity.py::run_sensitivity.rho": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "8bc85eca19784b7450d94874ca23f581d1a8e74461b023cf9ddb1f1ec6c2a92a",
+      "raw_hash": "6f67f1d8cd7e8d04d4d67e53409df88fa29ef6f0b4cf0bfc31761ddd35e77c48",
+      "meta": {
+        "lineno": 61,
+        "end_lineno": 61,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "typing.List"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::cosine_similarity": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "78184478784333c8550aed8c378041292b75430d9a170afb767194aa0755f62a",
+      "raw_hash": "2072bebf2ba4d936bcce8afd011f47c40790617fb4cb895ef6c52f9989fae218",
+      "calls": [
+        "sum",
+        "zip",
+        "sqrt",
+        "sum",
+        "sqrt",
+        "sum"
+      ],
+      "docstring": "2ベクトルのコサイン類似度を返す。",
+      "meta": {
+        "lineno": 17,
+        "end_lineno": 17,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::cosine_similarity.dot": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c02231b44a801d3afb154eddc9d77b184df6c598a6a3f67621e8e8e5248c4fbe",
+      "raw_hash": "8469e8804a2c0d3f990a65eb80bbd4f9d440b43f2a928617f57bd66a63d42e97",
+      "meta": {
+        "lineno": 18,
+        "end_lineno": 18,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::cosine_similarity.norm_a": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "31f510a5b098e15a028aaafbcae9768284b5c4279547ab603baeea1c70c6b330",
+      "raw_hash": "b9cda89b6d6a3dd7b83c0959b189574469751965794910b30137e3bc4f77bd4b",
+      "meta": {
+        "lineno": 19,
+        "end_lineno": 19,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::cosine_similarity.norm_b": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "d112c0738409e5e193ffe833a441e8001e62cf65f60ec0e4a1ae3811f50c9f05",
+      "raw_hash": "cf6e4c0cf4fb8b29772dde49987f88d6079651a21f75b7117b2e8c582df77e1f",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::temporal_decay": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "5878114c51c8189b0953a1ec3bafb1eae955d04d0666ac4ea1599a5ba53b1995",
+      "raw_hash": "c50dd1cfa92c2be81e4903ec95f6640b06da174bbe839903811f5796dacd32e8",
+      "calls": [
+        "time",
+        "stat",
+        "exp"
+      ],
+      "docstring": "時間減衰係数 D(t) を返す（指数減衰、半減期 half_life 日）。",
+      "meta": {
+        "lineno": 27,
+        "end_lineno": 27,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::temporal_decay.days_old": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "62aba47e117b6ca7d0a2f4d00c50c2d943e38106f6eac57260eb76f239e99d1c",
+      "raw_hash": "e1e82c1c6beec6510a05d03680f4ad32f22a629d94032e40ffff0b4e173e34da",
+      "meta": {
+        "lineno": 28,
+        "end_lineno": 28,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::compute_chunk_scores": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "3831d4bcc2f63bb79be83aec654d7d37f5c41ce9664afefa8a952688079fd7a6",
+      "raw_hash": "1f42cf9c89be639ea9c0d1fa7db9aea81f3152da8261eb63d58642100b8005c2",
+      "calls": [
+        "len",
+        "enumerate",
+        "cosine_similarity",
+        "max",
+        "index",
+        "append",
+        "round",
+        "round",
+        "min",
+        "max"
+      ],
+      "docstring": "チャンクごとの S_topic と関連プロトタイプ情報を返す。",
+      "meta": {
+        "lineno": 39,
+        "end_lineno": 39,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::compute_chunk_scores.results": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "a5ce7864fd21e59c12b3c5166f4a40a89f85a999f4cbb86c4d73c56b80131962",
+      "raw_hash": "c85920c668aae658d5f4d348a4581be616f9e965b8c95d7007a741d18606106c",
+      "meta": {
+        "lineno": 40,
+        "end_lineno": 40,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::compute_chunk_scores.n": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c6cd665b6f503e64c6727a9d6200d64eba0a86c94f307a5e8eaad77173be9514",
+      "raw_hash": "c1626c9f488308e2759dc7b835778516e65d3ace43d43fa758aae782c15dfd14",
+      "meta": {
+        "lineno": 41,
+        "end_lineno": 41,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::compute_chunk_scores.sims": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "655d162cff16f804feef73af1d2a7aad30fd1cbdda9328abf375ec8674d74c35",
+      "raw_hash": "a003e9c84f2a8976ec6ad66b0e643d3ffa8f71ab8adc6330aa1c3b94fb060283",
+      "meta": {
+        "lineno": 43,
+        "end_lineno": 43,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::compute_chunk_scores.max_sim": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ef2d343078198dc17f073a2f3c5663b1c834e889a70b10d20b2d2fe981c2c2b2",
+      "raw_hash": "3311db2c6a057c66c8fa6cc94d00766ec4eea12a7f9ec1caad5b0ad56417a620",
+      "meta": {
+        "lineno": 44,
+        "end_lineno": 44,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::compute_chunk_scores.top_idx": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "42de5b7072c92f31ced68b774f13a7a1cdcfb09aa76b2873a0345332624a88f3",
+      "raw_hash": "235f692e4482b1c90089283f1bd4d6f2dc8e79cef6a22fc1697c3500f3a31e96",
+      "meta": {
+        "lineno": 45,
+        "end_lineno": 45,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::compute_chunk_scores.s_topic": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ac8782302cb158c50bd83983d716b706b4f4479093dc66a444f52a62b88f48b7",
+      "raw_hash": "708ab33f8019e58178d93af9ccbe039db6e897d8b02102ee0bb7f0b3690b2c51",
+      "meta": {
+        "lineno": 46,
+        "end_lineno": 46,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_topic_scorer.py::compute_chunk_scores.pos": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "477c32821f7dabfe4d0e0a8932b601c9fe75d82541fabf0bfc842b56da7ff2bb",
+      "raw_hash": "6db6437b8690d33373e705897990a331cac17667fe0d8d456cb96ed1ce1d6886",
+      "meta": {
+        "lineno": 56,
+        "end_lineno": 56,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "time",
+          "pathlib.Path",
+          "typing.List",
+          "typing.Tuple",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::YEAR_PATTERN": {
+      "type": "variable",
+      "scope": "global",
+      "logic_hash": "52e151a0b191e56936e615476ebad56c490e398f0dbdff2aaee3f2316b1f2282",
+      "raw_hash": "3115ce681c35ca26bd08e8912c7dcad005926e138c37d3b8b218577a4789e5e5",
+      "meta": {
+        "lineno": 14,
+        "end_lineno": 14,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::extract_year": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "a7501d1cb51aa096ee5bef35531b7fabb63168f1bf481088c09dae1e75c4f546",
+      "raw_hash": "6ec9cc13f6458436e9916355cac3a537e45aaacb7db1c743e5d8a619f9e52450",
+      "calls": [
+        "as_posix",
+        "findall",
+        "int",
+        "int",
+        "max",
+        "stat",
+        "fromtimestamp"
+      ],
+      "docstring": "パストークンから年度を抽出して返す。見つからなければ mtime の年を返す。",
+      "meta": {
+        "lineno": 18,
+        "end_lineno": 18,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::extract_year.tokens": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "eb5df340a0c6d684e455636ad5d78fb906adc019880f4b975037bf6bd1ed8775",
+      "raw_hash": "7f3a6f99bd37a8c7fe2a586059902ac7860e9923a927902d4dadd18465463285",
+      "meta": {
+        "lineno": 19,
+        "end_lineno": 19,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::extract_year.matches": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "3d14bb135e14d852f24f6bc55e949ff8b76382fa4b00763c0571eebf1a88e77a",
+      "raw_hash": "69c56111be8eeb7790c86cab23590cccca494a221c08bfabf4e6470df5e01445",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::extract_year.years": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "4b3d3d49339064dab3fea1301bfe12677b8769913213c2415ebaf3188fd0042e",
+      "raw_hash": "4ce2b111fa0a380c5416ef0b6687d2b3565adc64b8c66af50276dcbb6fea483a",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::extract_year.mtime": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "316ed13d6fad28685b694327965c26bb52d797f2854f45a7c015b43f059738c2",
+      "raw_hash": "cc5014e978bb23be459f167e398619673f1db62994d5cbac17094ec8329a6a35",
+      "meta": {
+        "lineno": 25,
+        "end_lineno": 25,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::year_weight": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "5fb845b849ac5382e96bb01236a753665cdd66a96013fdad56ce30a9c7370584",
+      "raw_hash": "fa09bd95b254da5b1bbb225946aba59a6057b1f31a42617834fb162ea3bb5df4",
+      "calls": [
+        "load_config",
+        "gmtime",
+        "str",
+        "float",
+        "get"
+      ],
+      "docstring": "年代スロット重み A(y) を返す。",
+      "meta": {
+        "lineno": 30,
+        "end_lineno": 30,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::year_weight.cfg": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ed1d9edec8f9bfd7868c9386730cdfab9c41e8ad56d4574e56c27ebed8188629",
+      "raw_hash": "8c106bc4a394b67fca07803d4f7c7d94b6b5f54b6f004dbe6d0bb7ec7b7bf2e6",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::year_weight.current_year": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "4c9e05cfcbe22e19d80ec65846f62459bce98ee445f0196e9bad6393255ffc4c",
+      "raw_hash": "9570ab9220b3ecba686cbe849a456d987cfe1bb1b828e10b979b59fd9abff5f3",
+      "meta": {
+        "lineno": 32,
+        "end_lineno": 32,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::year_weight.diff": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "2e0d26f053deab7d996357b673b83f866ed77cbe9e83cd9b513f0c2f8f7d5a59",
+      "raw_hash": "6783ea5c7772cdb1642cde42ec7a410b68882150990f92797ba5c2ce3f7d2e7e",
+      "meta": {
+        "lineno": 33,
+        "end_lineno": 33,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::year_weight.weights": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "b54588ff05454d6b073d9c8057aab107d804be228fd6dadd6089aa3994c74293",
+      "raw_hash": "88c00c73849e49d9903a905ee9e947d80aa0e8fee5680fe3a4771872802e7eab",
+      "meta": {
+        "lineno": 34,
+        "end_lineno": 34,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "sources/dps_year_classifier.py::year_weight.key": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "f75d4f758c361dd9e78e9456a3a12c88dca0e4502b0a2e9c54fdcf8ebf7073f7",
+      "raw_hash": "487f714b021bb87ae75b2faa500670763a4e27c3ca223e9d8800fd9ba73fa6e9",
+      "meta": {
+        "lineno": 35,
+        "end_lineno": 35,
+        "imports": [
+          "__future__.annotations",
+          "re",
+          "time",
+          "pathlib.Path",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "tests/conftest.py::tmp_file": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "65990bfbfa1562341a4a3968edeced67a8ff5005d844483cc9d79d6fec1ba56e",
+      "raw_hash": "b63ed8d7c0ad7996165c6c1fcd896cba20c0b14133fb341b8529bf6876c076a4",
+      "calls": [
+        "mkdir",
+        "write_text",
+        "fixture"
+      ],
+      "docstring": "テスト用の一時テキストファイルを返す。",
+      "meta": {
+        "lineno": 14,
+        "end_lineno": 14,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "os",
+          "time",
+          "pathlib.Path",
+          "pytest"
+        ]
+      }
+    },
+    "tests/conftest.py::tmp_file.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "1bb1a343c0e153ae5bc46f8a9792bdd6cab6df57982524721d42c1d4fd574136",
+      "raw_hash": "8b2de53bd3cbacc805100da6ee424bf282937854a4094b3d401056dc1c46e670",
+      "meta": {
+        "lineno": 15,
+        "end_lineno": 15,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "os",
+          "time",
+          "pathlib.Path",
+          "pytest"
+        ]
+      }
+    },
+    "tests/conftest.py::small_file": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "781cee2db537b4cff4ccadd8217dbf1f71768cd8fc110ae2ea9f9b6a27b2f58d",
+      "raw_hash": "671b8e00e7b1089d5dc08a2de8eaf756e1bf99156aa71b8d6ebab793078a82cf",
+      "calls": [
+        "write_text",
+        "fixture"
+      ],
+      "docstring": "2KB 未満の小さいファイルを返す。",
+      "meta": {
+        "lineno": 26,
+        "end_lineno": 26,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "os",
+          "time",
+          "pathlib.Path",
+          "pytest"
+        ]
+      }
+    },
+    "tests/conftest.py::small_file.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "3b724f27613b4c72d57be353801340f4e4bb96ad49a71ecc87d78c283dc1b6ff",
+      "raw_hash": "1d3559b14b2f02e7b0d1db3c374c91617c9a5b1e725abea901c7ef0deeef7cd4",
+      "meta": {
+        "lineno": 27,
+        "end_lineno": 27,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "os",
+          "time",
+          "pathlib.Path",
+          "pytest"
+        ]
+      }
+    },
+    "tests/conftest.py::sample_config": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "f4e83bce518639de63f806747fdc353c857243adab67457b2ea10ae9e89ad051",
+      "raw_hash": "ca12e100e06fc78f502ce72101125d1bbabfa9ca814bf03d269cf38617995d78",
+      "calls": [
+        "fixture"
+      ],
+      "docstring": "テスト用設定辞書を返す。",
+      "meta": {
+        "lineno": 34,
+        "end_lineno": 34,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "os",
+          "time",
+          "pathlib.Path",
+          "pytest"
+        ]
+      }
+    },
+    "tests/test_aggregator.py::test_aggregate_dps_empty_chunks": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "06e8a34d3a5c5fde1898d0cec99b5e43b8cdfa6bf1f3383ea4ae3613718fc1e8",
+      "raw_hash": "fe36b6c2d774c87a019a2fc4701c6540263a2a4ed46390df6d8dc75553e907f4",
+      "calls": [
+        "aggregate_dps"
+      ],
+      "docstring": "チャンクが空のときは dps_score = s_meta になること。",
+      "meta": {
+        "lineno": 10,
+        "end_lineno": 10,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_aggregator.POSITION_WEIGHT"
+        ]
+      }
+    },
+    "tests/test_aggregator.py::test_aggregate_dps_empty_chunks.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "94a37c1631ed52fdccdc108785386fe9f8ba0427daf04a56465981379394b518",
+      "raw_hash": "46e10b8af519c288df0f0a216efbecf5e58e74136c795f2f35cea4b9938566e4",
+      "meta": {
+        "lineno": 11,
+        "end_lineno": 11,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_aggregator.POSITION_WEIGHT"
+        ]
+      }
+    },
+    "tests/test_aggregator.py::test_aggregate_dps_formula": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "e913f65cf784cd84e6347f92f14b54174e6b5498ff810963ccc5b06f9f0e0626",
+      "raw_hash": "37cc147efe2d4ac509d60b3e39ef554160a62c31e516b0a1ec5c88527180f912",
+      "calls": [
+        "aggregate_dps",
+        "abs"
+      ],
+      "docstring": "alpha=0.30 で DPS スコアが正しく計算されること。",
+      "meta": {
+        "lineno": 16,
+        "end_lineno": 16,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_aggregator.POSITION_WEIGHT"
+        ]
+      }
+    },
+    "tests/test_aggregator.py::test_aggregate_dps_formula.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "d19c211613b7d84fdd9b0c7dedacbf564108dab167251221f67fb32b75fdfd55",
+      "raw_hash": "067648818083566572992cc9b0c52e74dea6aab588f187f6b791c9649af2f27f",
+      "meta": {
+        "lineno": 17,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_aggregator.POSITION_WEIGHT"
+        ]
+      }
+    },
+    "tests/test_aggregator.py::test_aggregate_dps_formula.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "6d374c9af286fa73bec3db9ce18f886809e3dc51815cb5b68687bf81de935309",
+      "raw_hash": "c35a0131b731d40df41626ee22475e3fd7c00da8c1dba660810f778d83bf15e2",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 22,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_aggregator.POSITION_WEIGHT"
+        ]
+      }
+    },
+    "tests/test_aggregator.py::test_aggregate_dps_score_range": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "16cce81c82ea670dc2dfceda665798da0e57c4ccd373869511623b9b4190decf",
+      "raw_hash": "f861f02e4e18289e07f87a8d5bd254c9fe3d1d53f89e4bdf4bab7f11eb104a5f",
+      "calls": [
+        "aggregate_dps"
+      ],
+      "docstring": "DPS スコアが 0.0〜1.0 の範囲内であること。",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_aggregator.POSITION_WEIGHT"
+        ]
+      }
+    },
+    "tests/test_aggregator.py::test_aggregate_dps_score_range.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "71e2704b8c6cc38e548b35f5471077eb7a98101a877e88c9444802c08f80afd5",
+      "raw_hash": "5c30ac2829596c48531a5b54a6240adb5dc8e27ffae14b2d91c8adaf104cdb84",
+      "meta": {
+        "lineno": 32,
+        "end_lineno": 32,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_aggregator.POSITION_WEIGHT"
+        ]
+      }
+    },
+    "tests/test_aggregator.py::test_aggregate_dps_score_range.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "daedc40272fc33068e118909bd63127802e80d66bf8f71b65af35d7db0433485",
+      "raw_hash": "ea6ff9a9dff4f578f34d7f63f12f67ad8c85444fd1ab5025304fd4b18848ab26",
+      "meta": {
+        "lineno": 33,
+        "end_lineno": 33,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_aggregator.aggregate_dps",
+          "sources.dps_aggregator.POSITION_WEIGHT"
+        ]
+      }
+    },
+    "tests/test_checkpoint.py::test_load_checkpoint_no_file": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "7e47943c778d2e00a00ab9cd026530a40a5f45fe3487d91fd0a33ac03f116102",
+      "raw_hash": "d1c7c8ba0d91477c22b773884987328cc1f700541ca65517799680de114f012e",
+      "calls": [
+        "object",
+        "load_checkpoint"
+      ],
+      "docstring": "チェックポイントファイルが存在しない場合に初期値を返すこと。",
+      "meta": {
+        "lineno": 13,
+        "end_lineno": 13,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_checkpoint"
+        ]
+      }
+    },
+    "tests/test_checkpoint.py::test_load_checkpoint_no_file.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "7a7bb0f5dec619b37460868849c497e063708435b37251532dfdd8c8a0c40d6c",
+      "raw_hash": "9b14bae2d93718d1422a8bc116f47ad26ba6abdfd3e8165b9be3743c7be8770e",
+      "meta": {
+        "lineno": 15,
+        "end_lineno": 15,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_checkpoint"
+        ]
+      }
+    },
+    "tests/test_checkpoint.py::test_save_and_load_checkpoint": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "7fa6beca049ce79f6bebd1c2b8bf8100a9b571d9bee731b3d91449a07084830f",
+      "raw_hash": "592a7d07cdeb586fac26bba3c4e8333bcb6eab9a6005bef4045b11cf14e49647",
+      "calls": [
+        "object",
+        "save_checkpoint",
+        "load_checkpoint"
+      ],
+      "docstring": "保存したチェックポイントを正しく読み込めること。",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_checkpoint"
+        ]
+      }
+    },
+    "tests/test_checkpoint.py::test_save_and_load_checkpoint.cp_file": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "fec85a6d2d536c91ad54fbd074975a8fd1b035c72549c9da00456e6e608b235d",
+      "raw_hash": "fae92c995c96924c9a9104ca480a22b99a0c1a74ef3384aadf040d97071b6632",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_checkpoint"
+        ]
+      }
+    },
+    "tests/test_checkpoint.py::test_save_and_load_checkpoint.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "7a7bb0f5dec619b37460868849c497e063708435b37251532dfdd8c8a0c40d6c",
+      "raw_hash": "9b14bae2d93718d1422a8bc116f47ad26ba6abdfd3e8165b9be3743c7be8770e",
+      "meta": {
+        "lineno": 24,
+        "end_lineno": 24,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_checkpoint"
+        ]
+      }
+    },
+    "tests/test_checkpoint.py::test_mark_complete": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "95c2580923eb6f504768188d4f7cd603ef6624bd9efacd611d81f3d890060726",
+      "raw_hash": "475d578ca4f0f1a1ccafa1d0ff533980ea1670f4adec0c1a8dd33046b346aaab",
+      "calls": [
+        "object",
+        "mark_complete",
+        "load_checkpoint"
+      ],
+      "docstring": "mark_complete 後に dps_complete が True になること。",
+      "meta": {
+        "lineno": 30,
+        "end_lineno": 30,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_checkpoint"
+        ]
+      }
+    },
+    "tests/test_checkpoint.py::test_mark_complete.cp_file": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "fec85a6d2d536c91ad54fbd074975a8fd1b035c72549c9da00456e6e608b235d",
+      "raw_hash": "fae92c995c96924c9a9104ca480a22b99a0c1a74ef3384aadf040d97071b6632",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_checkpoint"
+        ]
+      }
+    },
+    "tests/test_checkpoint.py::test_mark_complete.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "7a7bb0f5dec619b37460868849c497e063708435b37251532dfdd8c8a0c40d6c",
+      "raw_hash": "9b14bae2d93718d1422a8bc116f47ad26ba6abdfd3e8165b9be3743c7be8770e",
+      "meta": {
+        "lineno": 34,
+        "end_lineno": 34,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_checkpoint"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_small_text": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "47357e632a7c05f2bd773900f344ec7c58469778b0e3b3afa3b77b8fecc99347",
+      "raw_hash": "9b5b19b889642aa3fc866416b7cd6f80cf0f2ae53f850e1383bc97464f1687d0",
+      "calls": [
+        "_split_chunks",
+        "len"
+      ],
+      "docstring": "500文字未満のテキストは1チャンクになること。",
+      "meta": {
+        "lineno": 12,
+        "end_lineno": 12,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_small_text.text": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "112b761e6c549eb173b70fa3f505e5f3e51e8b9526a353734cdb6c8a6f91d965",
+      "raw_hash": "f20df78366196d914a6415b3ce5bb705e3f51648fe8c54813eaaab2b41c9ef80",
+      "meta": {
+        "lineno": 13,
+        "end_lineno": 13,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_small_text.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "71654a9d2a9f3e7db0f512b4c026ea04fff3f21cea555ae14bc5fd77a092e4b5",
+      "raw_hash": "5e324c52990c158df04889ba809288809cbf533accbebd3a567151033862f084",
+      "meta": {
+        "lineno": 14,
+        "end_lineno": 14,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_large_text": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "36a131632a9e8cae247f474cb7d9b236a3a46eda06f4d48fa08e54c714dbca87",
+      "raw_hash": "1a17fef0eb2f784316c5d2ca102e10976474d7decd882a61621087c724d88684",
+      "calls": [
+        "_split_chunks",
+        "len"
+      ],
+      "docstring": "500文字以上のテキストは複数チャンクに分割されること。",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_large_text.text": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "eecdaa8eb7c4cf8b5051ab11638cb4a909180a452ad861c51db9ee4283b4dc75",
+      "raw_hash": "7a41b36e913f2b7637234e29d3b38b9e4e9a1f6dfc9a592e6f7df18ececbfa91",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_large_text.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "71654a9d2a9f3e7db0f512b4c026ea04fff3f21cea555ae14bc5fd77a092e4b5",
+      "raw_hash": "5e324c52990c158df04889ba809288809cbf533accbebd3a567151033862f084",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 22,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_overlap": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "0e468b773e8b83db37c618b1b15ffa7928384c1c3c6b9fefaf6a4689b0555085",
+      "raw_hash": "e526ccd5329faf04b55ecbf2052de3df467f730743b328ce614dc0a6e9207918",
+      "calls": [
+        "_split_chunks",
+        "len"
+      ],
+      "docstring": "オーバーラップが正しく適用されること。",
+      "meta": {
+        "lineno": 27,
+        "end_lineno": 27,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_overlap.text": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "d01636ea01284710548aedb26d62274d3400b5046bca2270533c4b6ada8a47b5",
+      "raw_hash": "7348f57e9f3323751bbde24a27dd2b54d47a2a8fff344510f6af1899229e77ea",
+      "meta": {
+        "lineno": 28,
+        "end_lineno": 28,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_split_chunks_overlap.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "043d1c2ab2615e4d99855a2356d6eea8c2e04e76019ca9fefcc98a95527da97f",
+      "raw_hash": "a1a7152d4d18296cc903ca73ef3b7fdd0a8d350e71ed24fb0652c5209bc6259a",
+      "meta": {
+        "lineno": 29,
+        "end_lineno": 29,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_cache_key_differs_on_mtime": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "c9827f5ee60135c5657a79110659282d36d052cb0a7a3e892f6d5b641344d3cf",
+      "raw_hash": "20f5523a4ed8cd99b8e172c418be098c1bdac06fa60222f9263f06ca62ad56a3",
+      "calls": [
+        "write_text",
+        "_cache_key",
+        "sleep",
+        "utime",
+        "stat",
+        "stat",
+        "_cache_key"
+      ],
+      "docstring": "mtime が変わるとキャッシュキーが変わること。",
+      "meta": {
+        "lineno": 36,
+        "end_lineno": 36,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_cache_key_differs_on_mtime.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "0285719bc5a90d08a1410a3fa9ba8081d964e88756025bd35f49e2791e64ab4e",
+      "raw_hash": "da889dd0d08b8e090b00743f607683e25182eacc59338284481e75cb2b2b2e11",
+      "meta": {
+        "lineno": 38,
+        "end_lineno": 38,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_cache_key_differs_on_mtime.key1": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "ac043ea94c178125679b31fa5d2d7cd2b22ed60562ae793ea4f3ed3a1754ef13",
+      "raw_hash": "e86b8f85e165bd399042e5916beea72c4fda87c19e7a1fcfa27a116ccf3264a8",
+      "meta": {
+        "lineno": 40,
+        "end_lineno": 40,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_chunk_embedder.py::test_cache_key_differs_on_mtime.key2": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "bafb8272b3f5eb7360da5275b203f18b8a439c73370edf6dc54b04b20271ee69",
+      "raw_hash": "5e8351cc80d4c23efee33f5329022eb1ef8a5fc698d6b6f5be653c705fc10c40",
+      "meta": {
+        "lineno": 45,
+        "end_lineno": 45,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_chunk_embedder._split_chunks",
+          "sources.dps_chunk_embedder._cache_key"
+        ]
+      }
+    },
+    "tests/test_config_loader.py::test_load_config_ok": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "e9bc97d6ca8bfde4f200905f31bdf80e14400ea2d6837f8f5e8b420df68c054c",
+      "raw_hash": "4286c1437432bc9ce758b7a78842f693fe18589bdb4bd739a171c26d8bf834f5",
+      "calls": [
+        "write_text",
+        "dumps",
+        "load_config"
+      ],
+      "docstring": "有効な設定ファイルを正常に読み込めること。",
+      "meta": {
+        "lineno": 13,
+        "end_lineno": 13,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "tests/test_config_loader.py::test_load_config_ok.cfg_path": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c742282be77327ceb398aee3be1eee5f1f90781a2cd42a7196bef5796eb4f7f7",
+      "raw_hash": "55254ca1b81140a6ec9bb6dbdd6523808f14f1be610462a3b7504d8f6528aafa",
+      "meta": {
+        "lineno": 14,
+        "end_lineno": 14,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "tests/test_config_loader.py::test_load_config_ok.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "41657bd887e6803398935e94a564641710c9c75cd2fe282e34ef11c528240b24",
+      "raw_hash": "4b933e69dd441117c797e4e0fdc5c643cfb9e11e74fddf2eae4f813f0e33aa2d",
+      "meta": {
+        "lineno": 16,
+        "end_lineno": 16,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "tests/test_config_loader.py::test_load_config_missing_raises": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "0fe4d046ad31851f5078d8099efcbe0ce4f9177b76c34d837be35bcb0b362549",
+      "raw_hash": "e9a9b9d36ff51c96b829ae09284f73b556f21cba72ac70436c0e0071c4d3b849",
+      "calls": [
+        "raises",
+        "load_config"
+      ],
+      "docstring": "存在しないファイルは FileNotFoundError を送出すること。",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_config_loader.load_config"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_mtime_score_recent": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "b327eacaa206a544a0d4ee64b059a96185362691e94716d43df723d11c89afc8",
+      "raw_hash": "1b63bf3f2458bc2fd9ee34e15369b0c545455296ad86e9d24ddad2450db531ed",
+      "calls": [
+        "_mtime_score"
+      ],
+      "docstring": "直近ファイルは高い mtime スコアを返すこと。",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_mtime_score_recent.score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "44f01120b6b1f1a29f34900be71ae40eeb4b26a7059f88927a28ab294a2cdb55",
+      "raw_hash": "190e1748c6bdc00593d3963154cf826be462408d442d58b9e5925b5a8a779926",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_keyword_hit_score_match": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "17289bc8b38457a43cbc2afb10dae2946ea9427565a885237a41de7753a31b00",
+      "raw_hash": "e97ef31f25b95f9314a857ab3f9f5248e1062addcaefdb5ec11f9d26c372c1b1",
+      "calls": [
+        "_keyword_hit_score"
+      ],
+      "docstring": "パスにキーワードが含まれるとスコアが正の値になること。",
+      "meta": {
+        "lineno": 26,
+        "end_lineno": 26,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_keyword_hit_score_match.score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "2b23c786e4a54fa8091eb2e1423b4eefbfc6b118d85788ee5f9e8fe13626da9e",
+      "raw_hash": "383ce984d5d38ef42fbad42b79d024ebf2c6b3ca5485b80785827611508fb0a3",
+      "meta": {
+        "lineno": 27,
+        "end_lineno": 27,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_keyword_hit_score_no_match": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "bbd42f71a4c2cebd727e8d58b6eb0abc0ef8eae4a793c2b77f8435355a325a3f",
+      "raw_hash": "62d5886558a8886f9657d32aae62b6a7a3501bfe7a9bbeddf156a30c5866c8af",
+      "calls": [
+        "mkdir",
+        "write_text",
+        "_keyword_hit_score"
+      ],
+      "docstring": "キーワードが含まれないパスはスコア 0.0 を返すこと。",
+      "meta": {
+        "lineno": 32,
+        "end_lineno": 32,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_keyword_hit_score_no_match.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "23e3d8a63d74e2e3da92e33f5128d3b69ea442e620ee37fb85b0bf6066279ab6",
+      "raw_hash": "49cf39f26343cc6d6a42deb1514fce07225b6566eafc4f4cf6a03fd3f7d56b2e",
+      "meta": {
+        "lineno": 33,
+        "end_lineno": 33,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_keyword_hit_score_no_match.score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "b376e8b1c56b52c73d2dd9962de87c95e7260dfae501a8a2b2eb97818f60c144",
+      "raw_hash": "3de13bddc5fa23ddb350e9940355bacaab689211f3826af14ef536f2231fdf31",
+      "meta": {
+        "lineno": 36,
+        "end_lineno": 36,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_filetype_score_pdf": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "a6444de96a6fb7515314209342b99c66209554487504e3f9c99ea9f47f054de1",
+      "raw_hash": "f063db9d61d1f31a170740bc0b37d45a16d5a3c40c92d804240b322e3bd112f5",
+      "calls": [
+        "_filetype_score"
+      ],
+      "docstring": "PDF は 0.9 のスコアを返すこと。",
+      "meta": {
+        "lineno": 41,
+        "end_lineno": 41,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_filetype_score_unknown": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "c06ab0e2543fc3523dbcb1b91034b2a7d53ba5a40fbdae9eff28e8415ce72f7a",
+      "raw_hash": "8f8deba0088b3a08bb6bbfbb2a1e240c904e8ffe1657363327098193d1f792e9",
+      "calls": [
+        "write_text",
+        "_filetype_score"
+      ],
+      "docstring": "未知の拡張子はデフォルト 0.4 を返すこと。",
+      "meta": {
+        "lineno": 46,
+        "end_lineno": 46,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_filetype_score_unknown.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c5023bbab8f46e6388632aa24656f84142dac478a814228e9bada3b9a38f5eb4",
+      "raw_hash": "7f80bedcdc26df5870d4a3e6550d8c7a4c0c279a43ea0a1a9a2992dbda6f63bc",
+      "meta": {
+        "lineno": 47,
+        "end_lineno": 47,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_size_score_in_range": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "12148cd3552f421e5eebbdb611a9ef9c23c6a2f477899d2ce4ac19996a6ec77a",
+      "raw_hash": "8ccab0af26906447492f8020ae977e0f366d5edf9154bb586f1c89e795000440",
+      "calls": [
+        "_size_score"
+      ],
+      "docstring": "サイズ範囲内のファイルは 1.0 を返すこと（tmp_file は小さいので 0.5）。",
+      "meta": {
+        "lineno": 53,
+        "end_lineno": 53,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_size_score_in_range.score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c7925bce2fb5129d8dd39f0cd4fbfd094083b08ab6e145c76cdaf9ca739a8302",
+      "raw_hash": "4ca533d024aa27eb6dbc2c861c185b28a959072b445e0723bc501e85d1e99006",
+      "meta": {
+        "lineno": 54,
+        "end_lineno": 58,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_path_depth_score": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "3eb6df2268d6c07dd413af1c53f3554dd8d695ed02e83d2a23b9788b19c8131a",
+      "raw_hash": "2f40da418d06300917c6fcc98583c598acca240c418bb8fc9d83b27b8061becf",
+      "calls": [
+        "_path_depth_score"
+      ],
+      "docstring": "パス深さスコアが 0.0〜1.0 の範囲内であること。",
+      "meta": {
+        "lineno": 63,
+        "end_lineno": 63,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_path_depth_score.score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "0b8b44e7903cbab1c2b04670bf96218d00a1f7e3a15364eeafcb764e31d74969",
+      "raw_hash": "59a0f12f7b2944240f74bdd54f59d834803a12b9cc4cd3ae4175b7386fffee10",
+      "meta": {
+        "lineno": 64,
+        "end_lineno": 64,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_folder_density_score_sparse": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "b789eb211194c670aa41c6461a893593c90ae99519125c1aee63d9a0c69a9515",
+      "raw_hash": "c1855e1c17a98a79cc0275739461e838cdba7651cef6f304e1133f855d777d63",
+      "calls": [
+        "_folder_density_score"
+      ],
+      "docstring": "ファイル数が少ないフォルダは 1.0 を返すこと。",
+      "meta": {
+        "lineno": 69,
+        "end_lineno": 69,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_meta_scorer.py::test_folder_density_score_sparse.score": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "31f0c0fc86d9e9b93e92e4046de23284ef86ae514dfda69743be9b464cd70858",
+      "raw_hash": "9eb08ee412ea01e51a44d8b6860621face127dbb0b3a7977def9dbbeb86397a6",
+      "meta": {
+        "lineno": 70,
+        "end_lineno": 72,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "unittest.mock.patch",
+          "pytest",
+          "sources.dps_meta_scorer._mtime_score",
+          "sources.dps_meta_scorer._keyword_hit_score",
+          "sources.dps_meta_scorer._filetype_score",
+          "sources.dps_meta_scorer._path_depth_score",
+          "sources.dps_meta_scorer._size_score",
+          "sources.dps_meta_scorer._folder_density_score"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::_make_records": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "32e7fa70f5f74280249ded4bfe13c52a0f5483d32d6528f493bbebbd7d2a10dd",
+      "raw_hash": "ea1c9c7de69aa40fd960389086819c7e4db49990db83c40d3a47ebc5ecc423e0",
+      "calls": [],
+      "docstring": null,
+      "meta": {
+        "lineno": 13,
+        "end_lineno": 17,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_sorted_descending": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "c1eb8ef59bf1329b8db7d966b7cb06d853efb18f4e12a9a70844854b61dd4a1a",
+      "raw_hash": "30ea08d13e27dcb81fe4384c0b13dbfc52d8742ad53b22c95cdc3deaefcf9da6",
+      "calls": [
+        "build_priority_queue",
+        "_make_records",
+        "loads",
+        "splitlines",
+        "read_text",
+        "sorted"
+      ],
+      "docstring": "JSONL が dps_score 降順に出力されること。",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_sorted_descending.out": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "b59f20457d0ef11d21af2d212d07fd029b5458479fab1bbf81fce42c689f0ea8",
+      "raw_hash": "15864b1cd7b240eeb48694246304ad606e4f6edbdea961634bcbc7309676165d",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 22,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_sorted_descending.lines": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "3dba0c87d04672373aa015aa6a4a766fee32736f45fd4932523e535b42a3b1eb",
+      "raw_hash": "476741efc10c4d656317d2e5b6b908381a9aee97e13c9df45edbe31420789937",
+      "meta": {
+        "lineno": 24,
+        "end_lineno": 24,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_sorted_descending.scores": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "821e27a65f3fae070b3c61628537799efc87cb366a8715787e0fc6e2ba9d96a9",
+      "raw_hash": "c0f79b969aba221c789196fdbaa95feb5c88be6472da03675fa741b6ba543fbc",
+      "meta": {
+        "lineno": 25,
+        "end_lineno": 25,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_rank_starts_at_1": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "ebef6c5e166dd1ad8ebbf9c971258f2e54a9c8446180adb558068bca29c582f6",
+      "raw_hash": "d1177f8d78b60e5deb09f0a7a076216b28732c8e260fa75a736442e6be7e8507",
+      "calls": [
+        "build_priority_queue",
+        "_make_records",
+        "loads",
+        "splitlines",
+        "read_text"
+      ],
+      "docstring": "rank が 1 始まりであること。",
+      "meta": {
+        "lineno": 30,
+        "end_lineno": 30,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_rank_starts_at_1.out": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "b59f20457d0ef11d21af2d212d07fd029b5458479fab1bbf81fce42c689f0ea8",
+      "raw_hash": "15864b1cd7b240eeb48694246304ad606e4f6edbdea961634bcbc7309676165d",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_rank_starts_at_1.first": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "38141bf3d2dfeae2f6774231d03ebf7e7bd54af6382008d5a33466026471bc6d",
+      "raw_hash": "00944d4140bc122b9cd2f9a155b1f167aea25e60c1afb925e49c7c1513bb4d16",
+      "meta": {
+        "lineno": 33,
+        "end_lineno": 33,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_entry_count": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "a68e7a1589ccb52a84d94356e3aa19ae863a21987e05948fdd7fb01d5bf202ae",
+      "raw_hash": "0ac0a7e1158bd44e5d425579cfac2074250f49c6a24c9697793c1c5dbbf7a5ce",
+      "calls": [
+        "_make_records",
+        "build_priority_queue",
+        "splitlines",
+        "read_text",
+        "len",
+        "len"
+      ],
+      "docstring": "出力行数が入力レコード数と一致すること。",
+      "meta": {
+        "lineno": 38,
+        "end_lineno": 38,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_entry_count.records": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "043f9715df7cf2bc02ad5a08ce8465618d54ca7abdb7d2033c7c0a4e838c06c7",
+      "raw_hash": "2a7cedd37d498288c8a9db0e372f82a9b0ab6ea11ef0bad5f520ff658b42f9ff",
+      "meta": {
+        "lineno": 39,
+        "end_lineno": 39,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_entry_count.out": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "b59f20457d0ef11d21af2d212d07fd029b5458479fab1bbf81fce42c689f0ea8",
+      "raw_hash": "15864b1cd7b240eeb48694246304ad606e4f6edbdea961634bcbc7309676165d",
+      "meta": {
+        "lineno": 40,
+        "end_lineno": 40,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_queue_builder.py::test_queue_entry_count.lines": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "11f9d6a30fac2ce9ad606b14dae44b0a106574d48437e2476680323dae5ff5c1",
+      "raw_hash": "9bc7e415b50b28269e1578e43cd9c6f0b0699dbe2bf37d83b9cae81927ac5136",
+      "meta": {
+        "lineno": 42,
+        "end_lineno": 42,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_queue_builder.build_priority_queue"
+        ]
+      }
+    },
+    "tests/test_record_writer.py::test_write_record_creates_json": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "62a5fd38dd3fefe7607553a675fa885289e4771aa18a9f5990ebb6e451bee741",
+      "raw_hash": "214647ba44169f8a43e28aa1b6c9e5b1a1147a1bd2aa92bab219c7821b6b45d8",
+      "calls": [
+        "write_text",
+        "write_record",
+        "exists",
+        "loads",
+        "read_text"
+      ],
+      "docstring": "write_record が 元ファイルパス+.json を生成すること。",
+      "meta": {
+        "lineno": 13,
+        "end_lineno": 13,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_record_writer.write_record"
+        ]
+      }
+    },
+    "tests/test_record_writer.py::test_write_record_creates_json.fp": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "a754f8cf74b7892f1ea82d55d407366f89961d067451367f933d053497626ec8",
+      "raw_hash": "5a40b3395d1eba9170bb28ab238eb6abf48bae9f9e8229b2a119716fc4c37e9d",
+      "meta": {
+        "lineno": 14,
+        "end_lineno": 14,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_record_writer.write_record"
+        ]
+      }
+    },
+    "tests/test_record_writer.py::test_write_record_creates_json.meta": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "e07d2f4c0fdb1fdc0b7de9cf1265b4285fe4f26786ecf24dc7d03546c3c626c9",
+      "raw_hash": "86b74b46bf0bf8b6b5a7477a1010138ab55c32ae139fef91f257c345172ffa17",
+      "meta": {
+        "lineno": 16,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_record_writer.write_record"
+        ]
+      }
+    },
+    "tests/test_record_writer.py::test_write_record_creates_json.out": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "fb4f1838651d132604f891f021e163f794de9b5bbbe60082b60b4f10636c64da",
+      "raw_hash": "9db06509c4edeb803737a60202ea332160ddcb181d79fbfe43198ccb00505d8a",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 33,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_record_writer.write_record"
+        ]
+      }
+    },
+    "tests/test_record_writer.py::test_write_record_creates_json.data": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "625624a273c3ea909911e97e021dec31dcbc97a7d5fca1fc0774e69dfbc01bd1",
+      "raw_hash": "c196ce41ed24f29db8fc94fedd1e4860c4d47e2a1fdf87d5b193cde0e4ba32d7",
+      "meta": {
+        "lineno": 35,
+        "end_lineno": 35,
+        "imports": [
+          "__future__.annotations",
+          "json",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_record_writer.write_record"
+        ]
+      }
+    },
+    "tests/test_sensitivity.py::test_spearman_rho_identical": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "3bd8b20d5813ac4ad8fc781c9114b0c1edbe497ef9d098c39e1d3307aa85d8f9",
+      "raw_hash": "30ed9b7f8d178635e62db50bdcacf4df32730eb2d429c5450886b6e61607d691",
+      "calls": [
+        "abs",
+        "spearman_rho"
+      ],
+      "docstring": "同一リストの Spearman ρ は 1.0 になること。",
+      "meta": {
+        "lineno": 10,
+        "end_lineno": 10,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_sensitivity.spearman_rho",
+          "sources.dps_sensitivity.run_sensitivity"
+        ]
+      }
+    },
+    "tests/test_sensitivity.py::test_spearman_rho_identical.x": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "a92ecf281ed057702fd099b788eac8263c9f2a3ddf6ce4f37f4cd89cea0b945e",
+      "raw_hash": "90d273d5d1196ba7a99dff8ecd9345cc9b9df97711f14c44ece165920d37d596",
+      "meta": {
+        "lineno": 11,
+        "end_lineno": 11,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_sensitivity.spearman_rho",
+          "sources.dps_sensitivity.run_sensitivity"
+        ]
+      }
+    },
+    "tests/test_sensitivity.py::test_spearman_rho_single_element": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "764cb872aa086ce32dcdb6d45be41141e018694bb6947c52db474f1c5023090d",
+      "raw_hash": "bf549f79153225c67b55609c6f8708caa66d00f5cfa5eb0f59d313cb168972d5",
+      "calls": [
+        "spearman_rho"
+      ],
+      "docstring": "要素が1つのときは 1.0 を返すこと。",
+      "meta": {
+        "lineno": 16,
+        "end_lineno": 16,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_sensitivity.spearman_rho",
+          "sources.dps_sensitivity.run_sensitivity"
+        ]
+      }
+    },
+    "tests/test_sensitivity.py::test_run_sensitivity_stable": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "85fa0706886382f3b992958d278fdbab0d1992dfe154ca1253b7d9e1beef3617",
+      "raw_hash": "bf4fed85b49ad989f9f468ae873425c69f3c7aa0c41a287f5149514831ba7d67",
+      "calls": [
+        "run_sensitivity"
+      ],
+      "docstring": "alpha 摂動が ±20% 以内なら ρ > 0.9 になること（安定な設計）。",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_sensitivity.spearman_rho",
+          "sources.dps_sensitivity.run_sensitivity"
+        ]
+      }
+    },
+    "tests/test_sensitivity.py::test_run_sensitivity_stable.records": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "6a9df917330cc82920fca150c59329bbde45e3fab0b78c2362aa504fb838a63c",
+      "raw_hash": "463979fa1c9bb360568bb621ab0b0a8d006d60ad741db155d049ae8b8168c19d",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 28,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_sensitivity.spearman_rho",
+          "sources.dps_sensitivity.run_sensitivity"
+        ]
+      }
+    },
+    "tests/test_sensitivity.py::test_run_sensitivity_stable.result": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "043f871c76d20d4e9e40b583517e8312dafe81d0a5d16e46c11b9b4b1035c191",
+      "raw_hash": "44c507de75cddbba190de56049ff239666d9c63003d0e567329003c3a9cb16e2",
+      "meta": {
+        "lineno": 29,
+        "end_lineno": 29,
+        "imports": [
+          "__future__.annotations",
+          "pytest",
+          "sources.dps_sensitivity.spearman_rho",
+          "sources.dps_sensitivity.run_sensitivity"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_cosine_similarity_identical": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "d6d208e3b6144e44cde6960219a3601020df5871ffde2b0e3aaef02b67bc8638",
+      "raw_hash": "f4866dc257790d0af491ba359ed86e3bd9a1d98e9b8002dedf07fc574f61dcbf",
+      "calls": [
+        "abs",
+        "cosine_similarity"
+      ],
+      "docstring": "同一ベクトルのコサイン類似度は 1.0 になること。",
+      "meta": {
+        "lineno": 13,
+        "end_lineno": 13,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_cosine_similarity_identical.v": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "5e06d06539794b663267a54cfbf414fcc4a76b638e995a1f7dbf85612e44b609",
+      "raw_hash": "0bb4e116911a8dafb035c73ff4012b9da8b51b1bfecc5aedc056057c1cc948bc",
+      "meta": {
+        "lineno": 14,
+        "end_lineno": 14,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_cosine_similarity_orthogonal": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "c522ed75dc54f946d16b460239491e052577e13a012581a4a8a402f3f7a58c63",
+      "raw_hash": "4f849a45662895cd689cb2c572e187ca08320134e90a21bccdc3bae74581c2df",
+      "calls": [
+        "abs",
+        "cosine_similarity"
+      ],
+      "docstring": "直交ベクトルのコサイン類似度は 0.0 になること。",
+      "meta": {
+        "lineno": 19,
+        "end_lineno": 19,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_cosine_similarity_orthogonal.a": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "d35154f578a27dc36d0171df1ace95aad830ea9a1d0ea37e402a39a58de5d82e",
+      "raw_hash": "77770135ecacefc908d707519d33e3cdd1abfde7b4ec20a6cd201d9f2659c126",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_cosine_similarity_orthogonal.b": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "b2de957d92c919c281a2704c14c53fc2689a7f71dc17948f90d4c6c710c63152",
+      "raw_hash": "4b19e18768acd3b7c06d2684bb990b0fbacd343d51d6f8a2f381aaa180d2d2a4",
+      "meta": {
+        "lineno": 21,
+        "end_lineno": 21,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_cosine_similarity_zero_vector": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "1d9e9bcab84a712d8297c5cebaec99c3403f2fe13ee65ddb743bcd4aff371d74",
+      "raw_hash": "671663979026fe21b0049536aad012e7ceb835ddbe307fa7d0ef128a93ff3d0d",
+      "calls": [
+        "cosine_similarity"
+      ],
+      "docstring": "ゼロベクトルとの類似度は 0.0 になること。",
+      "meta": {
+        "lineno": 26,
+        "end_lineno": 26,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_position_assignment": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "ea4470889ce3b6629ea18e8fe33b4f19fb33014d9d206d14437a393823ec0d95",
+      "raw_hash": "5fa896f88be5b686de125d624b91348859e7023aba6d8a80e1a12b6c16ca0fbf",
+      "calls": [
+        "compute_chunk_scores"
+      ],
+      "docstring": "先頭チャンクは 'head'、末尾は 'tail' が割り当てられること。",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_position_assignment.proto_vecs": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "112399d3b40b6d65bf9072891a3a3c822684a0d8a4a467d3979090db6a4b5c34",
+      "raw_hash": "fe60949a114c2c233d665591fe7e978113f595c10e56648b521f954cf7908e86",
+      "meta": {
+        "lineno": 32,
+        "end_lineno": 32,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_position_assignment.proto_texts": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "992a5f5c2f7ea2e5f2a12ef297f8547641c44896b848b9cf5ae5ec5f0371754c",
+      "raw_hash": "91b8a46ee329ca73f78a7116232a317efb5825f7b0fa189f004ea2b75a6c7690",
+      "meta": {
+        "lineno": 33,
+        "end_lineno": 33,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_position_assignment.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "0b30fc49c52c4746f0effbadb2a580215dddeb94fc2c8bea59765bc53604fa9f",
+      "raw_hash": "ddb8f86d07b256edced2db081a34c995ad06b51bbb02ecf7a58ed522fbfdb4a4",
+      "meta": {
+        "lineno": 34,
+        "end_lineno": 38,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_position_assignment.results": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "879cbaa768c6ddc24c9c7414f358f35baa466c8224bc64e2f1417c8b5792b681",
+      "raw_hash": "73e96205b0cec7f24bff44b736d5e7e0ca4dba7fb76d9276d0272b729589342c",
+      "meta": {
+        "lineno": 39,
+        "end_lineno": 39,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_s_topic_range": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "cef85976f9e05efcdc7c9b79f2ee4989a4a41f7330c0b077dc4a8644fa9c0569",
+      "raw_hash": "1196007f2eda378aa65976550c280aecd5bbf8e9528d618b7e3e102dfbd83d27",
+      "calls": [
+        "compute_chunk_scores"
+      ],
+      "docstring": "S_topic が 0.0〜1.0 の範囲内であること。",
+      "meta": {
+        "lineno": 45,
+        "end_lineno": 45,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_s_topic_range.proto_vecs": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "d5fe12dd2b96f7c672bde8eb547f2f85417da04197410225da445a073f6e126a",
+      "raw_hash": "669354aec8f5552245e393abf322d3a62e0b4399d219261bcb9c0d2443cc6018",
+      "meta": {
+        "lineno": 46,
+        "end_lineno": 46,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_s_topic_range.proto_texts": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "2df24110d4a084a522fa4aedad84c56ffe746bb71754ce29d7a4b9836eca9068",
+      "raw_hash": "3abb8a46621ecd46b4d2286848203c231c65531725e43c3a43cdabc7ce30b1c0",
+      "meta": {
+        "lineno": 47,
+        "end_lineno": 47,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_s_topic_range.chunks": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "fd7e47f87bb9dda8f1df2292e0a911e88d293d4b4c2847734975878969e3b67e",
+      "raw_hash": "45fbadfe87add78b4b2dd2fee6df2767aff4df91756297af53b4c7b49a5c19e0",
+      "meta": {
+        "lineno": 48,
+        "end_lineno": 48,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_topic_scorer.py::test_compute_chunk_scores_s_topic_range.results": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "1f3735bbad1d56fc6ed109a00a3385e6df5b004b06fbdc9179d2f951de090728",
+      "raw_hash": "82696089c683aa8c5428f14125a921a5cd19599548edde7d5e6627e0262de036",
+      "meta": {
+        "lineno": 49,
+        "end_lineno": 49,
+        "imports": [
+          "__future__.annotations",
+          "math",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_topic_scorer.cosine_similarity",
+          "sources.dps_topic_scorer.compute_chunk_scores"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_extract_year_from_path": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "e65d84eeb1581a07064dc676b61e50f8e41e2543eaa83ed97f2a312d7c973070",
+      "raw_hash": "75ff992931109bcf6bc0da95d69d40f802ce879ff8e0628df00301d6cb6e5d1e",
+      "calls": [
+        "mkdir",
+        "write_text",
+        "extract_year"
+      ],
+      "docstring": "パスに含まれる年度を正しく抽出できること。",
+      "meta": {
+        "lineno": 12,
+        "end_lineno": 12,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_extract_year_from_path.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "28b1a6d0e5050b1d8bd655f91a28b6c7fc01bebd5c106e6a0f4f279dac9d8901",
+      "raw_hash": "03348559f0f6c550d0097feb4afee39405cb085b8a3437b0654730add06e577c",
+      "meta": {
+        "lineno": 13,
+        "end_lineno": 13,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_extract_year_fallback_to_mtime": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "51d89dbe8f9844686d18603b4c375404d76ff5c7f72a63e0672ed704b22354cb",
+      "raw_hash": "f699ea4cf41b1a07327b778b6656bc8aacf4bdbe6bba246468ca8aeccb3c2be3",
+      "calls": [
+        "write_text",
+        "extract_year",
+        "now"
+      ],
+      "docstring": "年度がパスにない場合は mtime の年を返すこと。",
+      "meta": {
+        "lineno": 20,
+        "end_lineno": 20,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_extract_year_fallback_to_mtime.p": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "c1e1062f7abef51062aee84c3e63bb14d85558ea62b22d7e47af33a86379bc0f",
+      "raw_hash": "453efe355d7fee01bd55062e2ad9ac023f501a89083443f02925cc7a5f562743",
+      "meta": {
+        "lineno": 22,
+        "end_lineno": 22,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_extract_year_fallback_to_mtime.year": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "55c6215f035766f315498b544a4293446b1415c8dbe6c0423df757ed46650257",
+      "raw_hash": "eb093b540353e1e083c14eb72613bff760eaa0f166deec73afff2ed201869c21",
+      "meta": {
+        "lineno": 24,
+        "end_lineno": 24,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_year_weight_current": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "6d9e77c1105ab76546ff48ba36af4877e674c886d8dfb41ee857f26039cb3e99",
+      "raw_hash": "4e89f686efa432e3bd6345795a0da32dda67f5f1412a07f3c3f155696cef4295",
+      "calls": [
+        "gmtime",
+        "year_weight"
+      ],
+      "docstring": "当年は重み 1.0 を返すこと。",
+      "meta": {
+        "lineno": 29,
+        "end_lineno": 29,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_year_weight_current.current": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "4e196ccc778e7d3b385b324706513eb1a37916ca3fd197c5d2a6d67b079f8e60",
+      "raw_hash": "56c7dff32d707e8b1ecd8c27b3154f24f5f07631193200de34cd76644bf319f2",
+      "meta": {
+        "lineno": 31,
+        "end_lineno": 31,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_year_weight_old": {
+      "type": "function",
+      "scope": "global",
+      "logic_hash": "ce72d08268ace65d218ba85b31317039a134712e2bd80f176078cc1c70538a38",
+      "raw_hash": "ad3053001a567a26f4e2033337e2d07852666278b15f38760e0f623b9850793c",
+      "calls": [
+        "gmtime",
+        "year_weight"
+      ],
+      "docstring": "3年以上前はデフォルト重み 0.4 を返すこと。",
+      "meta": {
+        "lineno": 36,
+        "end_lineno": 36,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    },
+    "tests/test_year_classifier.py::test_year_weight_old.old_year": {
+      "type": "variable",
+      "scope": "local",
+      "logic_hash": "fdf4d27adacba9d392abfda98006f341b5e87db459faaba767a4618636a33351",
+      "raw_hash": "dc0ff7ef6a6bcfbe4ee31bd9217cb5a98708ffb7385ea2252922259680176992",
+      "meta": {
+        "lineno": 38,
+        "end_lineno": 38,
+        "imports": [
+          "__future__.annotations",
+          "pathlib.Path",
+          "pytest",
+          "sources.dps_year_classifier.extract_year",
+          "sources.dps_year_classifier.year_weight"
+        ]
+      }
+    }
+  }
+}

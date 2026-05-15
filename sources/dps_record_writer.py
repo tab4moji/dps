@@ -21,6 +21,15 @@ def write_record(
     dps_score: float,
     embed_model: str,
 ) -> Path:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 2
+    Actual Use: TRUE
+    """
     """スコアリング結果を JSON ファイルに書き出してパスを返す。"""
     topics = list({
         c["top_prototype"]

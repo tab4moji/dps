@@ -11,12 +11,30 @@ from typing import List
 
 
 def _rank_list(records: List[dict], key: str = "dps_score") -> List[float]:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: FALSE
+    """
     """スコア降順のランクリストを返す。"""
     sorted_r = sorted(records, key=lambda r: r[key], reverse=True)
     return [r[key] for r in sorted_r]
 
 
 def spearman_rho(x: List[float], y: List[float]) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 2
+    Actual Use: TRUE
+    """
     """2つのリストの Spearman 順位相関係数を返す。"""
     n = len(x)
     if n < 2:
@@ -28,6 +46,15 @@ def spearman_rho(x: List[float], y: List[float]) -> float:
 
 
 def _rank_values(values: List[float]) -> List[int]:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """値リストを順位リストに変換して返す（降順）。"""
     indexed = sorted(enumerate(values), key=lambda t: t[1], reverse=True)
     ranks = [0] * len(values)
@@ -42,6 +69,15 @@ def run_sensitivity(
     perturbation: float = 0.20,
     top_n: int = 100,
 ) -> dict:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 1
+    Actual Use: TRUE
+    """
     """alpha を ±20% 変動させて Spearman ρ を計算して返す。"""
     base_scores = [
         alpha_base * r["meta"]["S_meta"]

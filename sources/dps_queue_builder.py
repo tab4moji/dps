@@ -14,6 +14,15 @@ def build_priority_queue(
     records: List[dict],
     output_path: Path = Path("priority_queue.jsonl"),
 ) -> Path:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 4
+    Actual Use: TRUE
+    """
     """records を dps_score 降順でソートして JSONL に書き出し、パスを返す。"""
     sorted_records = sorted(records, key=lambda r: r["dps_score"], reverse=True)
     with output_path.open("w", encoding="utf-8") as fh:

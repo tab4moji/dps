@@ -18,12 +18,30 @@ from sources.dps_config_loader import load_config
 # --- 個別シグナル計算 ---
 
 def _mtime_score(file_path: Path, half_life: float) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 1
+    Actual Use: TRUE
+    """
     """mtime 新しさスコア（指数減衰）を返す。"""
     days_old = (time.time() - file_path.stat().st_mtime) / 86400
     return math.exp(-0.693 * days_old / half_life)
 
 
 def _keyword_hit_score(file_path: Path, seed_keywords: List[str]) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 2
+    Actual Use: TRUE
+    """
     """フォルダパストークンとシード語の一致割合を返す。"""
     tokens = set(re.split(r'[^a-zA-Z0-9]+', file_path.as_posix().lower()))
     if not seed_keywords:
@@ -33,11 +51,29 @@ def _keyword_hit_score(file_path: Path, seed_keywords: List[str]) -> float:
 
 
 def _filetype_score(file_path: Path, filetype_scores: dict) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 2
+    Actual Use: TRUE
+    """
     """拡張子テーブルからファイル種別スコアを返す。"""
     return filetype_scores.get(file_path.suffix.lower(), 0.40)
 
 
 def _path_depth_score(file_path: Path, ideal_depth: int) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 1
+    Actual Use: TRUE
+    """
     """パス深さが ideal_depth からの乖離で減点したスコアを返す。"""
     depth = len(file_path.parts)
     diff = abs(depth - ideal_depth)
@@ -45,6 +81,15 @@ def _path_depth_score(file_path: Path, ideal_depth: int) -> float:
 
 
 def _size_score(file_path: Path, min_bytes: int, max_bytes: int) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 1
+    Actual Use: TRUE
+    """
     """ファイルサイズが範囲内なら 1.0、範囲外は 0.5 を返す。"""
     size = file_path.stat().st_size
     return 1.0 if min_bytes <= size <= max_bytes else 0.5
@@ -53,6 +98,15 @@ def _size_score(file_path: Path, min_bytes: int, max_bytes: int) -> float:
 def _folder_density_score(
     file_path: Path, density_threshold: int
 ) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 1
+    Actual Use: TRUE
+    """
     """同フォルダ内ファイル数が閾値超なら減点したスコアを返す。"""
     parent = file_path.parent
     try:
@@ -70,6 +124,15 @@ def _semantic_path_score(
     fallback_score: float,
     threshold: float,
 ) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: FALSE
+    """
     """Semantic Path Score を計算して返す。失敗時はフォールバック値を返す。"""
     import json
     import urllib.request
@@ -103,6 +166,15 @@ def compute_meta_score(
     prototype_vecs: list,
     config: dict | None = None,
 ) -> dict:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 1
+    Actual Use: FALSE
+    """
     """7シグナルを加重合計して S_meta と各シグナル値を返す。"""
     cfg = config if config is not None else load_config()
 

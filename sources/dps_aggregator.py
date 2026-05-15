@@ -16,6 +16,15 @@ def aggregate_dps(
     s_meta: float,
     alpha: float = 0.30,
 ) -> dict:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 4
+    Actual Use: TRUE
+    """
     """チャンクスコアを集約して DPS スコアと S_topic_agg を返す。"""
     if not chunk_scores:
         return {"S_topic_aggregated": 0.0, "dps_score": s_meta}

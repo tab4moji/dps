@@ -9,6 +9,15 @@ from sources.dps_chunk_embedder import _split_chunks, _cache_key
 
 
 def test_split_chunks_small_text() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """500文字未満のテキストは1チャンクになること。"""
     text = "short text"
     chunks = _split_chunks(text, chunk_size=500, overlap=200, min_len=500)
@@ -17,6 +26,15 @@ def test_split_chunks_small_text() -> None:
 
 
 def test_split_chunks_large_text() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """500文字以上のテキストは複数チャンクに分割されること。"""
     text = "a" * 1500
     chunks = _split_chunks(text, chunk_size=500, overlap=200, min_len=500)
@@ -24,6 +42,15 @@ def test_split_chunks_large_text() -> None:
 
 
 def test_split_chunks_overlap() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """オーバーラップが正しく適用されること。"""
     text = "a" * 1000
     chunks = _split_chunks(text, chunk_size=500, overlap=200, min_len=100)
@@ -33,6 +60,15 @@ def test_split_chunks_overlap() -> None:
 
 
 def test_cache_key_differs_on_mtime(tmp_path: Path) -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """mtime が変わるとキャッシュキーが変わること。"""
     import time
     p = tmp_path / "doc.txt"

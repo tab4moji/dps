@@ -12,6 +12,15 @@ DEFAULT_CONFIG_PATH = Path(__file__).parent.parent / "dps_config.json"
 
 
 def load_config(config_path: Path = DEFAULT_CONFIG_PATH) -> dict:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 7
+    Actual Use: TRUE
+    """
     """設定ファイルを読み込んで辞書を返す。"""
     if not config_path.exists():
         raise FileNotFoundError(f"設定ファイルが見つからない: {config_path}")

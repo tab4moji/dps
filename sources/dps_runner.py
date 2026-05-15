@@ -23,6 +23,15 @@ from sources.dps_checkpoint import load_checkpoint, save_checkpoint, mark_comple
 
 
 def _read_text(file_path: Path) -> str:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: FALSE
+    """
     """ファイルテキストを読み込んで返す。バイナリは空文字を返す。"""
     try:
         return file_path.read_text(encoding="utf-8", errors="ignore")
@@ -31,11 +40,29 @@ def _read_text(file_path: Path) -> str:
 
 
 def _walk_files(root: Path) -> List[Path]:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: FALSE
+    """
     """ルートディレクトリ以下の全ファイルパスを返す。"""
     return [p for p in root.rglob("*") if p.is_file()]
 
 
 def run(root_dir: str) -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: FALSE
+    """
     """DPS スコアリングを実行してキューとチェックポイントを書き出す。"""
     root = Path(root_dir)
     if not root.exists():

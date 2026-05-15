@@ -10,6 +10,15 @@ from sources.dps_record_writer import write_record
 
 
 def test_write_record_creates_json(tmp_path: Path) -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """write_record が 元ファイルパス+.json を生成すること。"""
     fp = tmp_path / "doc.pdf"
     fp.write_text("test", encoding="utf-8")

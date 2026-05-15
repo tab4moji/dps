@@ -7,12 +7,30 @@ from sources.dps_aggregator import aggregate_dps, POSITION_WEIGHT
 
 
 def test_aggregate_dps_empty_chunks() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """チャンクが空のときは dps_score = s_meta になること。"""
     result = aggregate_dps([], s_meta=0.5, alpha=0.30)
     assert result["dps_score"] == 0.5
 
 
 def test_aggregate_dps_formula() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """alpha=0.30 で DPS スコアが正しく計算されること。"""
     chunks = [
         {"position": "head", "S_topic": 0.8},
@@ -28,6 +46,15 @@ def test_aggregate_dps_formula() -> None:
 
 
 def test_aggregate_dps_score_range() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """DPS スコアが 0.0〜1.0 の範囲内であること。"""
     chunks = [{"position": "head", "S_topic": 1.0}]
     result = aggregate_dps(chunks, s_meta=1.0, alpha=0.30)

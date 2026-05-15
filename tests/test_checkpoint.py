@@ -10,6 +10,15 @@ from sources import dps_checkpoint
 
 
 def test_load_checkpoint_no_file(tmp_path: Path) -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """チェックポイントファイルが存在しない場合に初期値を返すこと。"""
     with patch.object(dps_checkpoint, "CHECKPOINT_FILE", tmp_path / "cp.json"):
         result = dps_checkpoint.load_checkpoint()
@@ -17,6 +26,15 @@ def test_load_checkpoint_no_file(tmp_path: Path) -> None:
 
 
 def test_save_and_load_checkpoint(tmp_path: Path) -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """保存したチェックポイントを正しく読み込めること。"""
     cp_file = tmp_path / "cp.json"
     with patch.object(dps_checkpoint, "CHECKPOINT_FILE", cp_file):
@@ -27,6 +45,15 @@ def test_save_and_load_checkpoint(tmp_path: Path) -> None:
 
 
 def test_mark_complete(tmp_path: Path) -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """mark_complete 後に dps_complete が True になること。"""
     cp_file = tmp_path / "cp.json"
     with patch.object(dps_checkpoint, "CHECKPOINT_FILE", cp_file):

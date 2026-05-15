@@ -14,6 +14,15 @@ from sources.dps_config_loader import load_config
 
 
 def cosine_similarity(a: List[float], b: List[float]) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 3
+    Actual Use: TRUE
+    """
     """2ベクトルのコサイン類似度を返す。"""
     dot = sum(x * y for x, y in zip(a, b))
     norm_a = math.sqrt(sum(x * x for x in a))
@@ -24,6 +33,15 @@ def cosine_similarity(a: List[float], b: List[float]) -> float:
 
 
 def temporal_decay(file_path: Path, half_life: float) -> float:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 1
+    Actual Use: FALSE
+    """
     """時間減衰係数 D(t) を返す（指数減衰、半減期 half_life 日）。"""
     days_old = (time.time() - file_path.stat().st_mtime) / 86400
     return math.exp(-0.693 * days_old / half_life)
@@ -36,6 +54,15 @@ def compute_chunk_scores(
     decay: float,
     year_w: float,
 ) -> List[dict]:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 3
+    Actual Use: TRUE
+    """
     """チャンクごとの S_topic と関連プロトタイプ情報を返す。"""
     results = []
     n = len(chunks)

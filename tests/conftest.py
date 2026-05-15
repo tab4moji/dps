@@ -11,6 +11,15 @@ import pytest
 
 @pytest.fixture()
 def tmp_file(tmp_path: Path) -> Path:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """テスト用の一時テキストファイルを返す。"""
     p = tmp_path / "projects" / "contracts" / "2026" / "invoice_test.pdf"
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -23,6 +32,15 @@ def tmp_file(tmp_path: Path) -> Path:
 
 @pytest.fixture()
 def small_file(tmp_path: Path) -> Path:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """2KB 未満の小さいファイルを返す。"""
     p = tmp_path / "tiny.txt"
     p.write_text("hello", encoding="utf-8")
@@ -31,6 +49,15 @@ def small_file(tmp_path: Path) -> Path:
 
 @pytest.fixture()
 def sample_config(tmp_path: Path) -> dict:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """テスト用設定辞書を返す。"""
     return {
         "alpha": 0.30,

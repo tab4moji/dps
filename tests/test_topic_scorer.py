@@ -10,12 +10,30 @@ from sources.dps_topic_scorer import cosine_similarity, compute_chunk_scores
 
 
 def test_cosine_similarity_identical() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """同一ベクトルのコサイン類似度は 1.0 になること。"""
     v = [1.0, 0.0, 0.0]
     assert abs(cosine_similarity(v, v) - 1.0) < 1e-9
 
 
 def test_cosine_similarity_orthogonal() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """直交ベクトルのコサイン類似度は 0.0 になること。"""
     a = [1.0, 0.0]
     b = [0.0, 1.0]
@@ -23,11 +41,29 @@ def test_cosine_similarity_orthogonal() -> None:
 
 
 def test_cosine_similarity_zero_vector() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """ゼロベクトルとの類似度は 0.0 になること。"""
     assert cosine_similarity([0.0, 0.0], [1.0, 1.0]) == 0.0
 
 
 def test_compute_chunk_scores_position_assignment() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """先頭チャンクは 'head'、末尾は 'tail' が割り当てられること。"""
     proto_vecs = [[1.0, 0.0, 0.0]]
     proto_texts = ["prototype"]
@@ -42,6 +78,15 @@ def test_compute_chunk_scores_position_assignment() -> None:
 
 
 def test_compute_chunk_scores_s_topic_range() -> None:
+    """
+    Type: function
+    Scope: global
+    Updates: 1
+    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
+    Ref Count: 0
+    Actual Use: TRUE
+    """
     """S_topic が 0.0〜1.0 の範囲内であること。"""
     proto_vecs = [[1.0, 0.0]]
     proto_texts = ["proto"]
