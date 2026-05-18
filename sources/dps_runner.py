@@ -1,13 +1,6 @@
 """dps_runner.py
-目的: DPS 全体オーケストレーション。ファイルを巡回してスコアリングし、
-      priority_queue.jsonl と dps_checkpoint.json を出力する。
-更新履歴:
-  001 2026-05-15 初版
-  002 2026-05-18 ドットディレクトリの除外と .dps/ への結果保存に対応
-  003 2026-05-18 ファイルハッシュによる変化検知に対応
-  004 2026-05-18 分析ディレクトリ直下に .dps/ を作成するよう変更
-  005 2026-05-18 source_path を相対パスに変更
-  006 2026-05-18 rank.md の出力に対応
+Purpose: DPS overall orchestration.
+Update: 006 2026-05-18 support rank.md, rank.json
 """
 from __future__ import annotations
 
@@ -29,7 +22,7 @@ from sources.dps_checkpoint import load_checkpoint, save_checkpoint, mark_comple
 
 
 def _read_text(file_path: Path) -> str:
-    """ファイルテキストを読み込んで返す。バイナリは空文字を返す。"""
+    """file read"""
     try:
         return file_path.read_text(encoding="utf-8", errors="ignore")
     except Exception:
@@ -37,7 +30,7 @@ def _read_text(file_path: Path) -> str:
 
 
 def _walk_files(root: Path) -> List[Path]:
-    """ルートディレクトリ以下の全ファイルパスを返す。ドットで始まるディレクトリは除外する。"""
+    """walk files"""
     files = []
     for p in root.rglob("*"):
         if p.is_file():
@@ -52,31 +45,24 @@ def _walk_files(root: Path) -> List[Path]:
 
 
 def run(root_dir: str) -> None:
-    """DPS スコアリングを実行してキューとチェックポイントを書き出す。"""
+    """run DPS"""
     root = Path(root_dir).absolute()
     if not root.exists():
-        print(f"ERROR: ディレクトリが見つからない: {root}", file=sys.stderr)
+        print(f"ERROR: {root}", file=sys.stderr)
         raise SystemExit(1)
 
     result_dir = root / ".dps"
-    print(f"[DPS] 分析結果保存先: {result_dir}")
-
     cfg = load_config()
     checkpoint = load_checkpoint()
     already_scored = set(checkpoint.get("scored_paths", []))
 
-    print("[DPS] プロトタイプベクトル生成中...")
     prototype_vecs = build_prototype_vecs(cfg)
-
     files = _walk_files(root)
-    print(f"[DPS] 対象ファイル数: {len(files)}")
 
     all_records: List[dict] = []
 
     for fp in files:
-        # 相対パスを取得
         rel_path = str(fp.relative_to(root))
-        
         json_path = get_result_path(fp, result_dir)
         current_hash = _calculate_file_hash(fp)
         
@@ -89,7 +75,6 @@ def run(root_dir: str) -> None:
             except Exception:
                 pass
 
-        print(f"[DPS] スコアリング中: {rel_path}")
         text = _read_text(fp)
         meta = compute_meta_score(fp, prototype_vecs, cfg)
         yr = extract_year(fp)
@@ -119,15 +104,16 @@ def run(root_dir: str) -> None:
         )
         already_scored.add(rel_path)
 
-    # 優先順位キューおよびランキング Markdown 生成
-    build_priority_queue(all_records, rank_md_path=result_dir / 'rank.md')
+    build_priority_queue(
+        all_records, 
+        rank_md_path=result_dir / 'rank.md',
+        rank_json_path=result_dir / 'rank.json'
+    )
     
     mark_complete(len(files))
-    print(f"[DPS] 完了 - {len(files)} ファイル処理済み")
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python -m sources.dps_runner <root_dir>", file=sys.stderr)
         raise SystemExit(1)
     run(sys.argv[1])
