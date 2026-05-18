@@ -3,10 +3,15 @@
       priority_queue.jsonl と dps_checkpoint.json を出力する。
 更新履歴:
   001 2026-05-15 初版
+  002 2026-05-18 ドットディレクトリの除外と .dps/ への結果保存に対応
+  003 2026-05-18 ファイルハッシュによる変化検知に対応
+  004 2026-05-18 分析ディレクトリ直下に .dps/ を作成するよう変更
+  005 2026-05-18 source_path を相対パスに変更
 """
 from __future__ import annotations
 
 import sys
+import json
 from pathlib import Path
 from typing import List
 
@@ -17,21 +22,12 @@ from sources.dps_year_classifier import extract_year, year_weight
 from sources.dps_chunk_embedder import embed_file_chunks
 from sources.dps_topic_scorer import compute_chunk_scores, temporal_decay
 from sources.dps_aggregator import aggregate_dps
-from sources.dps_record_writer import write_record
+from sources.dps_record_writer import write_record, get_result_path, _calculate_file_hash
 from sources.dps_queue_builder import build_priority_queue
 from sources.dps_checkpoint import load_checkpoint, save_checkpoint, mark_complete
 
 
 def _read_text(file_path: Path) -> str:
-    """
-    Type: function
-    Scope: global
-    Updates: 1
-    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Ref Count: 0
-    Actual Use: FALSE
-    """
     """ファイルテキストを読み込んで返す。バイナリは空文字を返す。"""
     try:
         return file_path.read_text(encoding="utf-8", errors="ignore")
@@ -40,34 +36,29 @@ def _read_text(file_path: Path) -> str:
 
 
 def _walk_files(root: Path) -> List[Path]:
-    """
-    Type: function
-    Scope: global
-    Updates: 1
-    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Ref Count: 0
-    Actual Use: FALSE
-    """
-    """ルートディレクトリ以下の全ファイルパスを返す。"""
-    return [p for p in root.rglob("*") if p.is_file()]
+    """ルートディレクトリ以下の全ファイルパスを返す。ドットで始まるディレクトリは除外する。"""
+    files = []
+    for p in root.rglob("*"):
+        if p.is_file():
+            try:
+                rel = p.relative_to(root)
+                if any(part.startswith(".") for part in rel.parts[:-1]):
+                    continue
+            except ValueError:
+                continue
+            files.append(p)
+    return files
 
 
 def run(root_dir: str) -> None:
-    """
-    Type: function
-    Scope: global
-    Updates: 1
-    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Ref Count: 0
-    Actual Use: FALSE
-    """
     """DPS スコアリングを実行してキューとチェックポイントを書き出す。"""
-    root = Path(root_dir)
+    root = Path(root_dir).absolute()
     if not root.exists():
         print(f"ERROR: ディレクトリが見つからない: {root}", file=sys.stderr)
         raise SystemExit(1)
+
+    result_dir = root / ".dps"
+    print(f"[DPS] 分析結果保存先: {result_dir}")
 
     cfg = load_config()
     checkpoint = load_checkpoint()
@@ -82,14 +73,23 @@ def run(root_dir: str) -> None:
     all_records: List[dict] = []
 
     for fp in files:
-        if str(fp) in already_scored:
-            json_path = Path(str(fp) + ".json")
-            if json_path.exists():
-                import json
+        # 相対パスを取得
+        rel_path = str(fp.relative_to(root))
+        
+        json_path = get_result_path(fp, result_dir)
+        current_hash = _calculate_file_hash(fp)
+        
+        if json_path.exists():
+            try:
                 rec = json.loads(json_path.read_text(encoding="utf-8"))
-                all_records.append(rec)
-                continue
+                # 相対パスまたは絶対パスでチェック（互換性のため）
+                if (rel_path in already_scored or str(fp) in already_scored) and rec.get("file_hash") == current_hash:
+                    all_records.append(rec)
+                    continue
+            except Exception:
+                pass
 
+        print(f"[DPS] スコアリング中: {rel_path}")
         text = _read_text(fp)
         meta = compute_meta_score(fp, prototype_vecs, cfg)
         yr = extract_year(fp)
@@ -102,7 +102,8 @@ def run(root_dir: str) -> None:
         agg = aggregate_dps(chunk_scores, meta["S_meta"], cfg["alpha"])
 
         rec = {
-            "source_path": str(fp),
+            "source_path": rel_path,
+            "file_hash": current_hash,
             "dps_score": agg["dps_score"],
             "year_slot": yr,
             "meta": meta,
@@ -111,10 +112,11 @@ def run(root_dir: str) -> None:
         all_records.append(rec)
 
         write_record(
-            fp, meta, yr, yw, decay, chunk_scores,
-            agg["S_topic_aggregated"], agg["dps_score"], cfg["embed_model"]
+            fp, result_dir, meta, yr, yw, decay, chunk_scores,
+            agg["S_topic_aggregated"], agg["dps_score"], cfg["embed_model"],
+            source_path=rel_path
         )
-        already_scored.add(str(fp))
+        already_scored.add(rel_path)
 
     build_priority_queue(all_records)
     mark_complete(len(files))

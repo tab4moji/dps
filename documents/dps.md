@@ -204,9 +204,12 @@ DPS_score = 0.30 * S_meta + 0.70 * S_topic_agg
 
 ***
 
-## 9. Step 6：結果記録（元ファイルパス+.json）
+## 9. Step 6：結果記録（.dps/ ディレクトリ）
 
-途中計算を含む**全中間値**を `元ファイルパス+.json` に保存する。
+分析結果の JSON ファイルは、指定された分析対象ディレクトリの直下の `.dps/` ディレクトリ（例：`documents/.dps/`）に一括保存される。
+ファイル名は、元ファイルの絶対パスを SHA-256 でハッシュ化したものとなる。
+
+これにより、分析結果自体が再分析の対象となる（無限ループ）ことを防ぎ、データディレクトリをクリーンに保つ。
 
 ### 記録フォーマット
 
@@ -283,13 +286,13 @@ DPS スコア降順でソートしたファイルリスト。Phase 1 の `file_w
 
 ***
 
-## 12. 再実行・差分処理
+### 12. 再実行・差分処理
 
 ```
-dps_complete: true かつ mtime 変化なし → 元ファイルパス+.json を再利用してスキップ
-dps_complete: true かつ mtime 変化あり → 該当ファイルのみ再スコアリング
-dps_complete: false                    → 未処理ファイルから再開（レジューム）
+.dps/ 配下の JSON に記録された file_hash と現在のファイルハッシュが一致 → スコア計算をスキップして JSON を再利用
+ハッシュが不一致 または JSON 不在 → 該当ファイルを再スコアリング
 ```
+
 
 ***
 
@@ -321,7 +324,7 @@ dps/
 | 実行ホスト | 会社 Linux サーバ（Ollama/Gemma4 稼働機と同一） |
 | ファイルアクセス | SMBマウント済みネットワークドライブを `os.walk` で直接巡回 |
 | LLM API | 使用しない（Embedding のみ） |
-| Embedding モデル | `nomic-embed-text`（`http://localhost:11434/api/embed`） |
+| Embedding モデル | `nomic-embed-text`（`http://localhost:11434/api/embed`、`OLLAMA_HOST` 環境変数で変更可） |
 | 実行タイミング | Phase 1 起動前に手動実行。以降は週次 cron で差分処理 |
 | 処理速度目安 | 1万ファイル・平均3チャンク/ファイルで 30分以内（Embedding律速） |
 
@@ -346,3 +349,4 @@ dps/
 
 ### 感度分析（Sensitivity Analysis）
 重みパラメータを ±20% 摂動させたときに `priority_queue.jsonl` の上位100件の順位がどれだけ変わるかを Spearman の順位相関係数 ρ で検証する分析。ρ > 0.9 であれば重み設計は安定と判断できる。`dps_sensitivity.py` で実行する。
+��

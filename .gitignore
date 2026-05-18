@@ -3,6 +3,7 @@
 **/.cached/
 **/.cache/
 **/.pyst/
+**/.dps/
 **/.pytest_cache/
 **/tmp/
 **/.runtime/

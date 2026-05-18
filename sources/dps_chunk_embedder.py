@@ -95,27 +95,23 @@ def _split_chunks(
     return chunks
 
 
-def _embed_text(text: str, ollama_url: str, model: str) -> List[float]:
-    """
-    Type: function
-    Scope: global
-    Updates: 1
-    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Ref Count: 0
-    Actual Use: FALSE
-    """
-    """Ollama embed API を呼び出して embedding ベクトルを返す。"""
-    payload = json.dumps({"model": model, "input": text}).encode()
+def _embed_batch(texts: List[str], ollama_url: str, model: str) -> List[List[float]]:
+    """Ollama embed API を呼び出して、複数のテキストの embedding ベクトルを一度に取得する。"""
+    if not texts:
+        return []
+    payload = json.dumps({"model": model, "input": texts}).encode()
     req = urllib.request.Request(
         ollama_url,
         data=payload,
         headers={"Content-Type": "application/json"},
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        data = json.loads(resp.read())
-    return data["embeddings"][0]
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read())
+        return data["embeddings"]
+    except Exception as e:
+        raise RuntimeError(f"Batch Embedding API 呼び出し失敗 (URL: {ollama_url}): {e}") from e
 
 
 def embed_file_chunks(
@@ -123,15 +119,6 @@ def embed_file_chunks(
     text: str,
     config: dict | None = None,
 ) -> List[Tuple[str, List[float]]]:
-    """
-    Type: function
-    Scope: global
-    Updates: 1
-    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Ref Count: 1
-    Actual Use: FALSE
-    """
     """チャンク分割+Embedding 結果を [(text, vec), ...] で返す。キャッシュ利用。"""
     cfg = config if config is not None else load_config()
     key = _cache_key(file_path)
@@ -145,10 +132,10 @@ def embed_file_chunks(
         cfg["chunk_overlap"],
         cfg["min_text_len"],
     )
-    result = []
-    for chunk_text in raw_chunks:
-        vec = _embed_text(chunk_text, cfg["ollama_url"], cfg["embed_model"])
-        result.append((chunk_text, vec))
+
+    # バッチ処理で一括 Embedding
+    vecs = _embed_batch(raw_chunks, cfg["ollama_url"], cfg["embed_model"])
+    result = list(zip(raw_chunks, vecs))
 
     _save_cache(key, [{"text": t, "vec": v} for t, v in result])
     return result
