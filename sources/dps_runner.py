@@ -7,6 +7,7 @@
   003 2026-05-18 ファイルハッシュによる変化検知に対応
   004 2026-05-18 分析ディレクトリ直下に .dps/ を作成するよう変更
   005 2026-05-18 source_path を相対パスに変更
+  006 2026-05-18 rank.md の出力に対応
 """
 from __future__ import annotations
 
@@ -82,7 +83,6 @@ def run(root_dir: str) -> None:
         if json_path.exists():
             try:
                 rec = json.loads(json_path.read_text(encoding="utf-8"))
-                # 相対パスまたは絶対パスでチェック（互換性のため）
                 if (rel_path in already_scored or str(fp) in already_scored) and rec.get("file_hash") == current_hash:
                     all_records.append(rec)
                     continue
@@ -108,6 +108,7 @@ def run(root_dir: str) -> None:
             "year_slot": yr,
             "meta": meta,
             "S_topic_aggregated": agg["S_topic_aggregated"],
+            "topics_detected": list({c['top_prototype'] for c in chunk_scores if c['cos_sim'] >= 0.5})
         }
         all_records.append(rec)
 
@@ -118,7 +119,9 @@ def run(root_dir: str) -> None:
         )
         already_scored.add(rel_path)
 
-    build_priority_queue(all_records)
+    # 優先順位キューおよびランキング Markdown 生成
+    build_priority_queue(all_records, rank_md_path=result_dir / 'rank.md')
+    
     mark_complete(len(files))
     print(f"[DPS] 完了 - {len(files)} ファイル処理済み")
 

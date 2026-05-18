@@ -1,37 +1,50 @@
 """dps_queue_builder.py
-目的: DPS スコア降順にソートした priority_queue.jsonl を生成する。
+目的: DPS スコア降順にソートした priority_queue.jsonl および rank.md を生成する。
 更新履歴:
   001 2026-05-15 初版
+  002 2026-05-18 自然言語形式のランキング表示 (rank.md) 生成機能を追加
 """
 from __future__ import annotations
 
 import json
+from datetime import datetime
 from pathlib import Path
 from typing import List
 
 
 def build_priority_queue(
     records: List[dict],
-    output_path: Path = Path("priority_queue.jsonl"),
+    output_path: Path = Path('priority_queue.jsonl'),
+    rank_md_path: Path | None = None,
 ) -> Path:
-    """
-    Type: function
-    Scope: global
-    Updates: 1
-    Created: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Last Updated: 2026-05-15T16:18:57+09:00 (e59d103a)
-    Ref Count: 4
-    Actual Use: TRUE
-    """
-    """records を dps_score 降順でソートして JSONL に書き出し、パスを返す。"""
-    sorted_records = sorted(records, key=lambda r: r["dps_score"], reverse=True)
-    with output_path.open("w", encoding="utf-8") as fh:
+    """records を dps_score 降順でソートして JSONL および Markdown に書き出す。"""
+    sorted_records = sorted(records, key=lambda r: r['dps_score'], reverse=True)
+    
+    # JSONL 出力
+    with output_path.open('w', encoding='utf-8') as fh:
         for rank, rec in enumerate(sorted_records, start=1):
             entry = {
-                "rank": rank,
-                "source_path": rec["source_path"],
-                "dps_score": rec["dps_score"],
-                "year_slot": rec["year_slot"],
+                'rank': rank,
+                'source_path': rec['source_path'],
+                'dps_score': rec['dps_score'],
+                'year_slot': rec['year_slot'],
             }
-            fh.write(json.dumps(entry, ensure_ascii=False) + "\n")
+            fh.write(json.dumps(entry, ensure_ascii=False) + '\n')
+    
+    # rank.md 出力
+    if rank_md_path:
+        with rank_md_path.open('w', encoding='utf-8') as fh:
+            fh.write('# DPS 資料重要度ランキング\n\n')
+            fh.write('このリストは、メタデータおよびセマンティック分析に基づき、優先的に処理すべき資料を順位付けしたものです。\n\n')
+            fh.write('| 順位 | 重要度 | ファイルパス | 年度 | 主なトピック |\n')
+            fh.write('| :--- | :--- | :--- | :--- | :--- |\n')
+            
+            for rank, rec in enumerate(sorted_records, start=1):
+                score_pct = f"{rec['dps_score'] * 100:.1f}%"
+                topics = ', '.join(rec.get('topics_detected', []))
+                fh.write(f"| {rank} | {score_pct} | {rec['source_path']} | {rec['year_slot']} | {topics} |\n")
+            
+            now_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            fh.write(f'\n\n---\n*生成日時: {now_str} (自動生成)*\n')
+
     return output_path
