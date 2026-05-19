@@ -1,7 +1,7 @@
 # Phase 0 設計報告書：資料重要度スコアリングシステム（DPS）
 
 **作成日：2026年5月15日**
-**更新日：2026年5月15日（v1.0 - 初版）**
+**更新日：2026年5月18日（v1.1 - 環境変数上書き・ランキング機能追記）**
 
 ***
 
@@ -13,7 +13,7 @@
 
 **本システムは Phase 1/1-I/2 のコードに一切手を入れない。** `priority_queue.jsonl`（DPS スコア降順）を出力し、`file_walker.py` の処理順序を置き換えるだけで統合が完了する。
 
-**1ファイルに複数トピックが含まれることを前提とする。** ファイルをチャンク単位で Embedding し、トピック重要度を集約することでファイルスコアを算出する。分析結果はすべて `元ファイルパス+.json` に記録し、途中計算も含めて漏れなく保存する。
+**1ファイルに複数トピックが含まれることを前提とする。** ファイルをチャンク単位で Embedding し、トピック重要度を集約することでファイルスコアを算出する。分析結果はすべて `.dps/` ディレクトリに記録し、途中計算も含めて漏れなく保存する。
 
 ***
 
@@ -38,11 +38,15 @@ Step 5:   DPS スコア集約               (dps_aggregator.py)
   ↓
 Step 6:   結果記録                      (dps_record_writer.py)
   ↓
-[出力] 元ファイルパス+.json（全中間値）
+[出力] .dps/[path_hash].json（全中間値）
       priority_queue.jsonl（DPS スコア降順）
+      rank.md（人間用レポート）
+      rank.json（構造化ランキング）
         ↓
         Phase 1（FastPass）へ引き継ぎ
 ```
+
+※ 全モジュールは `dps_config_loader.py` を介して `dps_config.json` および環境変数の設定値を読み込む。
 
 ***
 
@@ -287,10 +291,10 @@ DPS スコア降順でソートしたファイルリスト。Phase 1 の `file_w
 | 条件 | 内容 |
 |---|---|
 | 全ファイルスコア済み | `priority_queue.jsonl` のエントリ数 == `file_walker` が列挙したファイル数 |
-| キャッシュ整合 | 全 `元ファイルパス+.json` が存在し、`scored_at` が記録済み |
+| キャッシュ整合 | 全 `.dps/[path_hash].json` が存在し、`scored_at` が記録済み |
 | スコア値妥当性 | 全エントリの `dps_score` が 0.0〜1.0 の範囲内 |
 
-完了後、`dps_checkpoint.json` に `dps_complete: true` を記録して Phase 1 起動を許可する。
+完了後、`dps_checkpoint.json` に `dps_complete: true` および `total_files` を記録して Phase 1 起動を許可する。
 
 ***
 
@@ -308,19 +312,24 @@ DPS スコア降順でソートしたファイルリスト。Phase 1 の `file_w
 
 ```
 dps/
-├── dps_runner.py            # エントリポイント・全体オーケストレーション
-├── dps_init.py              # プロトタイプベクトル生成（起動時1回）
-├── dps_meta_scorer.py       # Step 1：S_meta 計算（7シグナル）
-├── dps_year_classifier.py   # Step 2：年代スロット判定・A(y)計算
-├── dps_chunk_embedder.py    # Step 3：固定幅チャンク分割 + Embedding
-├── dps_topic_scorer.py      # Step 4：S_topic 計算（cos・時間減衰・年代重み）
-├── dps_aggregator.py        # Step 5：チャンク位置重み付き集約 → DPS スコア
-├── dps_record_writer.py     # Step 6：元ファイルパス+.json 記録
-├── dps_queue_builder.py     # priority_queue.jsonl 生成（降順ソート）
-├── dps_sensitivity.py       # 感度分析（Spearman ρ 検証）
+├── dps_config.json          # シード語・年代重み・α・半減期・プロトタイプテキスト
 ├── dps_checkpoint.json      # DPS 完了状態・差分管理
 ├── dps_embed_cache.jsonl    # Embedding キャッシュ（path:mtime → vec）
-└── dps_config.json          # シード語・年代重み・α・半減期・プロトタイプテキスト
+├── priority_queue.jsonl     # Phase 1 連携用キュー
+├── sources/                 # Python ソースコード
+│   ├── dps_runner.py        # エントリポイント・全体オーケストレーション
+│   ├── dps_init.py          # プロトタイプベクトル生成（起動時1回）
+│   ├── dps_config_loader.py # 設定読み込み（環境変数上書き対応）
+│   ├── dps_meta_scorer.py   # Step 1：S_meta 計算（7シグナル）
+│   ├── dps_year_classifier.py # Step 2：年代スロット判定・A(y)計算
+│   ├── dps_chunk_embedder.py  # Step 3：固定幅チャンク分割 + Embedding
+│   ├── dps_topic_scorer.py  # Step 4：S_topic 計算（cos・時間減衰・年代重み）
+│   ├── dps_aggregator.py    # Step 5：チャンク位置重み付き集約 → DPS スコア
+│   ├── dps_record_writer.py # Step 6：.dps/[path_hash].json 記録
+│   ├── dps_queue_builder.py # priority_queue.jsonl, rank.md/json 生成
+│   ├── dps_sensitivity.py   # 感度分析（Spearman ρ 検証）
+│   └── dps_checkpoint.py    # チェックポイント管理ロジック
+└── tests/                   # ユニットテスト
 ```
 
 ***
@@ -332,9 +341,20 @@ dps/
 | 実行ホスト | 会社 Linux サーバ（Ollama/Gemma4 稼働機と同一） |
 | ファイルアクセス | SMBマウント済みネットワークドライブを `os.walk` で直接巡回 |
 | LLM API | 使用しない（Embedding のみ） |
-| Embedding モデル | `nomic-embed-text`（`http://localhost:11434/api/embed`、`OLLAMA_HOST` 環境変数で変更可） |
+| Embedding モデル | `nomic-embed-text`（`http://localhost:11434/api/embed`、環境変数で変更可） |
 | 実行タイミング | Phase 1 起動前に手動実行。以降は週次 cron で差分処理 |
 | 処理速度目安 | 1万ファイル・平均3チャンク/ファイルで 30分以内（Embedding律速） |
+
+### 環境変数による設定上書き
+
+`dps_config_loader.py` は以下の環境変数を検知し、`dps_config.json` の値を動的に上書きする。
+
+- **Ollama 関連**:
+  - `OLLAMA_HOST`: `ollama_url` のホスト部分を置換（例: `http://remote-gpu:11434`）
+  - `OLLAMA_KEEP_ALIVE`: `ollama_keep_alive` を設定
+  - `OLLAMA_CONTEXT_LENGTH`: `ollama_context_length` を設定
+- **DPS 汎用**:
+  - `DPS_[KEY]`: `dps_config.json` 内の任意のキーを上書き（例: `DPS_ALPHA=0.5`）
 
 ***
 
